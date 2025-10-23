@@ -9088,7 +9088,7 @@ button.bg-dark:hover {
 }
 
 .text-capitalize {
-    text-transform: none!important
+    text-transform: capitalize!important
 }
 
 .font-weight-light {

@@ -1453,15 +1453,11 @@ h3 {
 .slider_area .dog_thumb {
   position: absolute;
   bottom: 0;
-<<<<<<< HEAD
-  right: -20%;
-  bottom: 120px;
-=======
-  right: 30%;
-  bottom: 30px;
->>>>>>> c79c86c03ba9fb61bd4be43a0c4bec6a0cac6197
+  right: 5%;
+  bottom: 210px;
   z-index: 1;
 }
+
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 74, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */
@@ -1489,7 +1485,7 @@ h3 {
 
 /* line 92, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */
 .slider_area .dog_thumb img {
-  max-width: 70%;
+  max-width: 100%;
 }
 
 @media (max-width: 767px) {

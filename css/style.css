@@ -1453,11 +1453,10 @@ h3 {
 .slider_area .dog_thumb {
   position: absolute;
   bottom: 0;
-  right: 5%;
+  right: 10%;
   bottom: 210px;
   z-index: 1;
 }
-
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 74, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */

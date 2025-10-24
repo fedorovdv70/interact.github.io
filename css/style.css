@@ -1453,13 +1453,8 @@ h3 {
 .slider_area .dog_thumb {
   position: absolute;
   bottom: 0;
-<<<<<<< HEAD
   right: -20%;
   bottom: 120px;
-=======
-  right: 30%;
-  bottom: 30px;
->>>>>>> c79c86c03ba9fb61bd4be43a0c4bec6a0cac6197
   z-index: 1;
 }
 

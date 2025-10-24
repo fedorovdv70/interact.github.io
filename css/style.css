@@ -3264,7 +3264,7 @@ IMG.displayed {
 <IMG class="displayed" src="img/about/pet_care.png" alt="...">
 /* масштаб картинки line 10, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_pet_care.scss */
 .pet_care_area .pet_thumb img {
-  width: 100%;
+  width: 10%;
 }
 
 /* line 19, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_pet_care.scss */

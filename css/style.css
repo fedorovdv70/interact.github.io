@@ -3255,8 +3255,14 @@ h3 {
     padding-bottom: 0px;
   }
 }
-
-/* line 10, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_pet_care.scss */
+/* тестирую код центр  */
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+<img src="" alt="">
+<IMG class="displayed" src="img/about/pet_care.png" alt="...">
+/* масштаб картинки line 10, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_pet_care.scss */
 .pet_care_area .pet_thumb img {
   width: 100%;
 }

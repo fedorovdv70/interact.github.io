@@ -1449,12 +1449,12 @@ h3 {
   }
 }
 
-/* line 74, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */
+/* Банеер картинка line 74, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */
 .slider_area .dog_thumb {
   position: absolute;
   bottom: 0;
   right: 30%;
-  bottom: 50px;
+  bottom: 30px;
   z-index: 1;
 }
 

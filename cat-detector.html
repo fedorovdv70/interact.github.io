@@ -3,171 +3,291 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Детектор Котов + МЯУ!</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.21.0/dist/tf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
+  <title>🐱 Детектор Кота (Фото)</title>
+
+  <!-- TensorFlow.js + COCO-SSD -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2"></script>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; min-height: 100vh; display: flex;: flex; flex-direction: column; align-items: center; padding: 20px; }
-    header { text-align: center; margin: 30px 0; }
-    h1 { font-size: 2.8rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-    .container { background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border-radius: 20px; padding: 30px; max-width: 500px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); text-align: center; }
-    .upload-area { border: 3px dashed rgba(255,255,255,0.5); border-radius: 15px; padding: 40px; margin: 20px 0; cursor: pointer; background: rgba(255,255,255,0.1); }
-    .upload-area:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
-    .upload-area.dragover { background: rgba(255,255,255,0.3); transform: scale(1.02); }
-    #preview { max-width: 100%; max-height: 300px; border-radius: 12px; margin: 15px 0; display: none; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-    button { background: #ff6b6b; color: white; border: none; padding: 14px 30px; font-size: 1.1rem; border-radius: 50px; cursor: pointer; margin: 10px 5px 0; box-shadow: 0 5px 15px rgba(255,107,107,0.4); transition: 0.3s; }
-    button:hover { background: #ff5252; transform: translateY(-2px); }
-    button:disabled { background: #999; cursor: not-allowed; }
-    #result { margin-top: 25px; font-size: 1.5rem; font-weight: bold; min-height: 50px; }
-    .cat { color: #51cf66; }
-    .not-cat { color: #ff6b6b; }
-    .meow-btn { background: #51cf66; font-size: 1.5rem; padding: 12px 20px; }
-    .meow-btn:hover { background: #40b357; }
-    footer { margin-top: 50px; font-size: 0.9rem; opacity: 0.8; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      color: #fff;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    p { margin: 10px 0 20px; font-size: 1.1em; }
+
+    .upload-area {
+      border: 4px dashed #fff;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 20px 0;
+      background: rgba(255,255,255,0.1);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .upload-area:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.02);
+    }
+    .upload-area.dragover {
+      background: rgba(255,255,255,0.3);
+      border-color: #ff6b6b;
+    }
+
+    #imagePreview {
+      max-width: 100%;
+      max-height: 400px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      display: none;
+    }
+
+    #canvas {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      margin: 10px auto;
+      display: none;
+    }
+
+    #status {
+      font-size: 1.4em;
+      margin: 20px 0;
+      padding: 15px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 12px;
+      min-height: 60px;
+      transition: all 0.5s;
+      font-weight: bold;
+    }
+    .cat-detected {
+      background: #ff6b6b !important;
+      color: white;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 1.1em;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+      transform: translateY(-2px);
+    }
+    button:disabled {
+      background: #999;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .paw-print {
+      font-size: 3em;
+      margin: 20px 0;
+      animation: float 3s infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hidden { display: none; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>AI Детектор Котов</h1>
-    <p>Загрузи фото — и услышь "МЯУ!"</p>
-  </header>
-
   <div class="container">
+    <h1>🐾 Детектор Кота</h1>
+    <p>Загрузи фото — узнай, есть ли на нём кот!</p>
+
     <div class="upload-area" id="uploadArea">
-      <p>Перетащи фото сюда<br>или кликни для выбора</p>
-      <input type="file" id="fileInput" accept="image/*" hidden />
+      <p>📸 Перетащи фото сюда или кликни</p>
+      <input type="file" id="fileInput" accept="image/*" class="hidden" />
     </div>
 
-    <img id="preview" />
+    <img id="imagePreview" alt="Предпросмотр" />
+    <canvas id="canvas"></canvas>
 
-    <div>
-      <button id="analyzeBtn" disabled>Анализировать</button>
-      <button id="meowBtn" class="meow-btn" style="display:none">МЯУ!</button>
-    </div>
+    <div id="status">Выбери фото с котом... 😺</div>
 
-    <div id="result">Загрузка модели...</div>
+    <button id="detectBtn" onclick="detectCat()" disabled>🔍 Проверить на кота</button>
+    <button onclick="reset()">🔄 Сбросить</button>
+
+    <div class="paw-print">🐾 🐾 🐾</div>
   </div>
-
-  <footer><p>Создано с ❤️ и TensorFlow.js</p></footer>
-
-  <!-- ЗВУК МЯУ -->
-  <audio id="meowSound" preload="auto">
-    <source src="https://www.soundjay.com/human/cat-meow-01.mp3" type="audio/mpeg">
-  </audio>
 
   <script>
     const uploadArea = document.getElementById('uploadArea');
     const fileInput = document.getElementById('fileInput');
-    const preview = document.getElementById('preview');
-    const analyzeBtn = document.getElementById('analyzeBtn');
-    const meowBtn = document.getElementById('meowBtn');
-    const result = document.getElementById('result');
-    const meowSound = document.getElementById('meowSound');
+    const imagePreview = document.getElementById('imagePreview');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const status = document.getElementById('status');
+    const detectBtn = document.getElementById('detectBtn');
 
-    let model = null;
-    let currentTensor = null;
+    let model;
+    let currentImage;
 
-    // === ЗАГРУЗКА МОДЕЛИ ===
+    // Загрузка модели
     async function loadModel() {
-      result.innerHTML = "Загружаю AI...";
+      status.textContent = 'Загружаем ИИ для поиска котов... 🧠';
       try {
-        model = await mobilenet.load({ version: 2, alpha: 1.0 });
-        result.innerHTML = "AI готов! Загрузи фото";
+        model = await cocoSsd.load();
+        status.textContent = 'Модель готова! Загрузи фото.';
       } catch (err) {
-        result.innerHTML = "Нет интернета?";
-        console.error(err);
+        status.textContent = 'Ошибка загрузки ИИ: ' + err.message;
       }
     }
 
-    // === ЗВУК МЯУ ===
-    function playMeow() {
-      meowSound.currentTime = 0;
-      meowSound.play().catch(() => {});
-      meowBtn.style.display = 'inline-block';
-    }
-    meowBtn.addEventListener('click', playMeow);
+    // Обработка загрузки
+    uploadArea.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      loadImage(file);
+    };
 
-    // === ОБРАБОТКА ФАЙЛА ===
-    function handleFile(file) {
-      if (!file || !file.type.startsWith('image/')) return;
+    // Drag & Drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, preventDefaults, false);
+    });
+    ['dragenter', 'dragover'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, () => uploadArea.classList.add('dragover'), false);
+    });
+    ['dragleave', 'drop'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('dragover'), false);
+    });
+    uploadArea.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files.length) loadImage(files[0]);
+    });
+
+    function preventDefaults(e) { e.preventDefault(); e.stopPropagation(); }
+
+    // Загрузка изображения
+    function loadImage(file) {
+      if (!file.type.startsWith('image/')) {
+        alert('Пожалуйста, выбери изображение!');
+        return;
+      }
 
       const reader = new FileReader();
       reader.onload = (e) => {
-        preview.src = e.target.result;
-        preview.style.display = 'block';
-        analyzeBtn.disabled = false;
-        meowBtn.style.display = 'none';
-
-        const img = new Image();
-        img.onload = () => {
-          currentTensor = tf.tidy(() => {
-            let tensor = tf.browser.fromPixels(img);
-            tensor = tf.image.resizeBilinear(tensor, [224, 224]);
-            tensor = tensor.toFloat().div(127.5).sub(1);
-            return tensor.expandDims(0);
-          });
+        currentImage = new Image();
+        currentImage.onload = () => {
+          imagePreview.src = currentImage.src;
+          imagePreview.style.display = 'block';
+          canvas.width = currentImage.width;
+          canvas.height = currentImage.height;
+          canvas.style.display = 'block';
+          detectBtn.disabled = false;
+          status.textContent = 'Фото загружено! Нажми "Проверить на кота"';
         };
-        img.src = e.target.result;
+        currentImage.src = e.target.result;
       };
       reader.readAsDataURL(file);
     }
 
-    // === СОБЫТИЯ ===
-    uploadArea.addEventListener('click', () => fileInput.click());
-    ['dragover', 'dragenter'].forEach(e => uploadArea.addEventListener(e, ev => { ev.preventDefault(); uploadArea.classList.add('dragover'); }));
-    ['dragleave', 'drop'].forEach(e => uploadArea.addEventListener(e, ev => {
-      ev.preventDefault();
-      uploadArea.classList.remove('dragover');
-      if (e === 'drop' && ev.dataTransfer.files[0]) handleFile(ev.dataTransfer.files[0]);
-    }));
-    fileInput.addEventListener('change', () => fileInput.files[0] && handleFile(fileInput.files[0]));
+    // Детекция кота
+    async function detectCat() {
+      if (!model || !currentImage) return;
 
-    // === АНАЛИЗ (РАБОТАЕТ 100%) ===
-    analyzeBtn.addEventListener('click', async () => {
-      if (!model || !currentTensor) return;
+      detectBtn.disabled = true;
+      detectBtn.textContent = 'Ищем кота...';
+      status.textContent = 'Анализируем фото... 🐱';
 
-      analyzeBtn.disabled = true;
-      analyzeBtn.textContent = "Анализирую...";
-      result.innerHTML = "Ищу кота...";
-      meowBtn.style.display = 'none';
+      ctx.drawImage(currentImage, 0, 0);
+      const predictions = await model.detect(canvas);
 
-      try {
-        // Получаем ТОП-10 классов
-        const predictions = await model.classify(currentTensor, 10);
-
-        // Ищем кота в топ-10
-        const catPrediction = predictions.find(p => 
-          /cat|kitten|tabby|persian|siamese|egyptian|lynx|tiger|leopard|cougar|lion/i.test(p.className)
-        );
-
-        if (catPrediction) {
-          result.innerHTML = `
-            <div class="cat">ДА! ЭТО КОТ!</div>
-            <small>${catPrediction.className} — ${(catPrediction.probability * 100).toFixed(1)}%</small>
-          `;
-          playMeow();
-        } else {
-          result.innerHTML = `
-            <div class="not-cat">Нет, это НЕ кот</div>
-            <small>AI думает: ${predictions[0].className}</small>
-          `;
+      let catFound = false;
+      predictions.forEach(pred => {
+        if (pred.class === 'cat' && pred.score > 0.5) {
+          catFound = true;
+          drawBox(pred.bbox, pred.score);
         }
+      });
 
-        tf.dispose(currentTensor);
-        currentTensor = null;
-
-      } catch (err) {
-        result.innerHTML = "Ошибка сети. Попробуй снова.";
-        console.error(err);
+      if (catFound) {
+        status.innerHTML = `😻 КОТ ОБНАРУЖЕН! МЯУ! 🐈<br>Уверенность: высокая`;
+        status.classList.add('cat-detected');
+        playMeow();
+      } else {
+        status.innerHTML = `😿 Кота не найдено...<br>Попробуй другое фото!`;
+        status.classList.remove('cat-detected');
       }
 
-      analyzeBtn.textContent = "Анализировать";
-      analyzeBtn.disabled = false;
-    });
+      detectBtn.disabled = false;
+      detectBtn.textContent = '🔍 Проверить снова';
+    }
 
-    // === СТАРТ ===
-    loadModel();
+    // Рисуем рамку
+    function drawBox(bbox, score) {
+      const [x, y, width, height] = bbox;
+      ctx.strokeStyle = '#FF69B4';
+      ctx.lineWidth = Math.max(3, width * 0.01);
+      ctx.strokeRect(x, y, width, height);
+
+      ctx.fillStyle = '#FF69B4';
+      ctx.font = `${Math.max(16, width * 0.05)}px Arial`;
+      ctx.fillText(`Кот: ${(score * 100).toFixed(1)}%`, x + 10, y + 30);
+    }
+
+    // Мяуканье
+    function playMeow() {
+      const meow = new Audio('https://www.soundjay.com/human/sounds/meow-1.wav');
+      meow.volume = 0.6;
+      meow.play().catch(() => {});
+    }
+
+    // Сброс
+    function reset() {
+      fileInput.value = '';
+      imagePreview.style.display = 'none';
+      canvas.style.display = 'none';
+      status.textContent = 'Выбери новое фото...';
+      status.classList.remove('cat-detected');
+      detectBtn.disabled = true;
+      detectBtn.textContent = '🔍 Проверить на кота';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Старт
+    window.onload = () => {
+      loadModel();
+    };
   </script>
 </body>
 </html>

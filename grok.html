@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🐱 AI Детектор Котов</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.0.0/dist/tf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.0.0"></script>
+  <title>AI Детектор Котов</title>
+
+  <!-- РАБОЧИЕ CDN (обновлённые) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.21.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
+
   <style>
+    /* (весь CSS из прошлого сообщения — оставь без изменений) */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
     body {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -17,15 +21,8 @@
       align-items: center;
       padding: 20px;
     }
-    header {
-      text-align: center;
-      margin: 30px 0;
-    }
-    h1 {
-      font-size: 2.8rem;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      animation: fadeIn 1s ease;
-    }
+    header { text-align: center; margin: 30px 0; }
+    h1 { font-size: 2.8rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3); animation: fadeIn 1s ease; }
     .container {
       background: rgba(255,255,255,0.15);
       backdrop-filter: blur(12px);
@@ -46,200 +43,142 @@
       transition: all 0.3s;
       background: rgba(255,255,255,0.1);
     }
-    .upload-area:hover {
-      background: rgba(255,255,255,0.2);
-      border-color: #fff;
-    }
-    .upload-area.dragover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.02);
-    }
-    #preview {
-      max-width: 100%;
-      max-height: 300px;
-      border-radius: 12px;
-      margin: 15px 0;
-      display: none;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+    .upload-area:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
+    .upload-area.dragover { background: rgba(255,255,255,0.3); transform: scale(1.02); }
+    #preview { max-width: 100%; max-height: 300px; border-radius: 12px; margin: 15px 0; display: none; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
     button {
-      background: #ff6b6b;
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: 0.3s;
+      background: #ff6b6b; color: white; border: none; padding: 14px 30px; font-size: 1.1rem;
+      border-radius: 50px; cursor: pointer; margin-top: 15px; transition: 0.3s;
       box-shadow: 0 5px 15px rgba(255,107,107,0.4);
     }
-    button:hover {
-      background: #ff5252;
-      transform: translateY(-2px);
-    }
-    button:disabled {
-      background: #999;
-      cursor: not-allowed;
-      transform: none;
-    }
-    #result {
-      margin-top: 25px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      min-height: 50px;
-      animation: fadeIn 0.5s ease;
-    }
+    button:hover { background: #ff5252; transform: translateY(-2px); }
+    button:disabled { background: #999; cursor: not-allowed; }
+    #result { margin-top: 25px; font-size: 1.5rem; font-weight: bold; min-height: 50px; }
     .cat { color: #51cf66; }
     .not-cat { color: #ff6b6b; }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    footer { margin-top: 50px; font-size: 0.9rem; opacity: 0.8; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🐱 AI Детектор Котов</h1>
+    <h1>AI Детектор Котов</h1>
     <p>Загрузи фото — узнай, кот ли это!</p>
   </header>
 
   <div class="container">
     <div class="upload-area" id="uploadArea">
-      <p>📸 Перетащи фото сюда<br>или кликни для выбора</p>
+      <p>Перетащи фото сюда<br>или кликни для выбора</p>
       <input type="file" id="fileInput" accept="image/*" hidden />
     </div>
 
     <img id="preview" />
 
-    <button id="analyzeBtn" disabled>🔍 Анализировать</button>
+    <button id="analyzeBtn" disabled>Анализировать</button>
 
-    <div id="result"></div>
+    <div id="result">Загрузка модели...</div>
   </div>
 
   <footer>
-    <p>Создано с ❤️ и TensorFlow.js | Модель: MobileNet</p>
+    <p>Создано с ❤️ и TensorFlow.js | Модель: MobileNet v2.1.0</p>
   </footer>
-<script>
-  const uploadArea = document.getElementById('uploadArea');
-  const fileInput = document.getElementById('fileInput');
-  const preview = document.getElementById('preview');
-  const analyzeBtn = document.getElementById('analyzeBtn');
-  const result = document.getElementById('result');
 
-  let model;
-  let currentTensor;
+  <script>
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const result = document.getElementById('result');
 
-  // === ЗАГРУЗКА МОДЕЛИ ===
-  async function loadModel() {
-    result.innerHTML = "Загружаю AI...";
-    try {
-      model = await mobilenet.load();
-      result.innerHTML = "AI готов! Загрузи фото";
-    } catch (err) {
-      result.innerHTML = "Ошибка загрузки модели";
-      console.error(err);
+    let model = null;
+    let currentTensor = null;
+
+    // === ЗАГРУЗКА МОДЕЛИ ===
+    async function loadModel() {
+      result.innerHTML = "Загружаю AI... (это займёт 5-10 сек)";
+      try {
+        // Явно указываем версию
+        model = await mobilenet.load({ version: 2, alpha: 1.0 });
+        result.innerHTML = "AI готов! Загрузи фото";
+      } catch (err) {
+        console.error("Ошибка загрузки:", err);
+        result.innerHTML = `
+          <div style="color:#ff6b6b">
+            Ошибка загрузки модели<br>
+            <small>Проверь интернет или попробуй позже</small>
+          </div>`;
+      }
     }
-  }
 
-  // === ОБРАБОТКА ФАЙЛА ===
-  function handleFile(file) {
-    if (!file || !file.type.startsWith('image/')) return;
+    // === ОБРАБОТКА ФАЙЛА ===
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) {
+        result.innerHTML = "Выбери фото!";
+        return;
+      }
 
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      preview.src = e.target.result;
-      preview.style.display = 'block';
-      analyzeBtn.disabled = false;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        analyzeBtn.disabled = false;
 
-      // Создаём tensor из изображения
-      const img = new Image();
-      img.src = e.target.result;
-      img.onload = async () => {
-        const tensor = tf.browser.fromPixels(img)
-          .resizeNearestNeighbor([224, 224])
-          .toFloat()
-          .expandDims();
-        currentTensor = tensor;
+        // Создаём tensor
+        const img = new Image();
+        img.onload = () => {
+          const tensor = tf.browser.fromPixels(img)
+            .resizeNearestNeighbor([224, 224])
+            .toFloat()
+            .div(127.5).sub(1).expandDims(); // MobileNet preprocessing
+          currentTensor = tensor;
+        };
+        img.src = e.target.result;
       };
-    };
-    reader.readAsDataURL(file);
-  }
+      reader.readAsDataURL(file);
+    }
 
-  // === СОБЫТИЯ ЗАГРУЗКИ ===
-  uploadArea.addEventListener('click', () => fileInput.click());
-
-  ['dragover', 'dragenter'].forEach(evt => {
-    uploadArea.addEventListener(evt, e => {
-      e.preventDefault();
-      uploadArea.classList.add('dragover');
-    });
-  });
-
-  ['dragleave', 'drop'].forEach(evt => {
-    uploadArea.addEventListener(evt, e => {
-      e.preventDefault();
+    // === СОБЫТИЯ ===
+    uploadArea.addEventListener('click', () => fileInput.click());
+    ['dragover', 'dragenter'].forEach(e => uploadArea.addEventListener(e, ev => { ev.preventDefault(); uploadArea.classList.add('dragover'); }));
+    ['dragleave', 'drop'].forEach(e => uploadArea.addEventListener(e, ev => {
+      ev.preventDefault();
       uploadArea.classList.remove('dragover');
-      if (evt === 'drop' && e.dataTransfer.files[0]) {
-        handleFile(e.dataTransfer.files[0]);
+      if (e === 'drop' && ev.dataTransfer.files[0]) handleFile(ev.dataTransfer.files[0]);
+    }));
+    fileInput.addEventListener('change', () => fileInput.files[0] && handleFile(fileInput.files[0]));
+
+    // === АНАЛИЗ ===
+    analyzeBtn.addEventListener('click', async () => {
+      if (!model || !currentTensor) return;
+
+      analyzeBtn.disabled = true;
+      analyzeBtn.textContent = "Думаю...";
+      result.innerHTML = "";
+
+      try {
+        const predictions = await model.classify(currentTensor);
+        const top = predictions[0];
+
+        const isCat = /cat|kitten|tabby|persian|siamese|egyptian|lynx/i.test(top.className);
+
+        if (isCat) {
+          result.innerHTML = `<div class="cat">ДА! Это КОТ!</div><small>${top.className} — ${(top.probability*100).toFixed(1)}%</small>`;
+        } else {
+          result.innerHTML = `<div class="not-cat">Нет, это НЕ кот</div><small>AI думает: ${top.className}</small>`;
+        }
+      } catch (err) {
+        result.innerHTML = "Ошибка анализа";
+        console.error(err);
       }
+
+      analyzeBtn.textContent = "Анализировать";
+      analyzeBtn.disabled = false;
     });
-  });
 
-  fileInput.addEventListener('change', () => {
-    if (fileInput.files[0]) handleFile(fileInput.files[0]);
-  });
-
-  // === АНАЛИЗ ===
-  analyzeBtn.addEventListener('click', async () => {
-    if (!currentTensor || !model) {
-      result.innerHTML = "Сначала загрузи фото!";
-      return;
-    }
-
-    analyzeBtn.disabled = true;
-    analyzeBtn.textContent = "Думаю...";
-    result.innerHTML = "";
-
-    try {
-      const predictions = await model.classify(currentTensor);
-      const top = predictions[0];
-
-      const catKeywords = ['cat', 'kitten', 'tabby', 'persian', 'siamese', 'egyptian', 'lynx'];
-      const isCat = catKeywords.some(kw => top.className.toLowerCase().includes(kw));
-
-      if (isCat) {
-        result.innerHTML = `
-          <div class="cat">ДА! Это КОТ!</div>
-          <small>${top.className} — ${(top.probability * 100).toFixed(1)}%</small>
-        `;
-      } else {
-        result.innerHTML = `
-          <div class="not-cat">Нет, это НЕ кот</div>
-          <small>AI думает: ${top.className}</small>
-        `;
-      }
-    } catch (err) {
-      result.innerHTML = "Ошибка анализа";
-      console.error(err);
-    }
-
-    analyzeBtn.textContent = "Анализировать";
-    analyzeBtn.disabled = false;
-  });
-
-  // Запуск
-  loadModel();
-</script>
+    // === СТАРТ ===
+    loadModel();
+  </script>
 </body>
 </html>

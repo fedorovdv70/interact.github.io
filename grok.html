@@ -130,88 +130,116 @@
   <footer>
     <p>Создано с ❤️ и TensorFlow.js | Модель: MobileNet</p>
   </footer>
+<script>
+  const uploadArea = document.getElementById('uploadArea');
+  const fileInput = document.getElementById('fileInput');
+  const preview = document.getElementById('preview');
+  const analyzeBtn = document.getElementById('analyzeBtn');
+  const result = document.getElementById('result');
 
-  <script>
-    const uploadArea = document.getElementById('uploadArea');
-    const fileInput = document.getElementById('fileInput');
-    const preview = document.getElementById('preview');
-    const analyzeBtn = document.getElementById('analyzeBtn');
-    const result = document.getElementById('result');
+  let model;
+  let currentTensor;
 
-    let model;
-    let currentImg;
-
-    // Загружаем модель
-    async function loadModel() {
-      result.innerHTML = "🤖 Загружаю AI...";
+  // === ЗАГРУЗКА МОДЕЛИ ===
+  async function loadModel() {
+    result.innerHTML = "Загружаю AI...";
+    try {
       model = await mobilenet.load();
-      result.innerHTML = "✅ AI готов!";
-      setTimeout(() => result.innerHTML = "", 2000);
+      result.innerHTML = "AI готов! Загрузи фото";
+    } catch (err) {
+      result.innerHTML = "Ошибка загрузки модели";
+      console.error(err);
     }
+  }
 
-    // Обработка загрузки
-    uploadArea.addEventListener('click', () => fileInput.click());
-    uploadArea.addEventListener('dragover', e => {
+  // === ОБРАБОТКА ФАЙЛА ===
+  function handleFile(file) {
+    if (!file || !file.type.startsWith('image/')) return;
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+      analyzeBtn.disabled = false;
+
+      // Создаём tensor из изображения
+      const img = new Image();
+      img.src = e.target.result;
+      img.onload = async () => {
+        const tensor = tf.browser.fromPixels(img)
+          .resizeNearestNeighbor([224, 224])
+          .toFloat()
+          .expandDims();
+        currentTensor = tensor;
+      };
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // === СОБЫТИЯ ЗАГРУЗКИ ===
+  uploadArea.addEventListener('click', () => fileInput.click());
+
+  ['dragover', 'dragenter'].forEach(evt => {
+    uploadArea.addEventListener(evt, e => {
       e.preventDefault();
       uploadArea.classList.add('dragover');
     });
-    uploadArea.addEventListener('dragleave', () => {
-      uploadArea.classList.remove('dragover');
-    });
-    uploadArea.addEventListener('drop', e => {
+  });
+
+  ['dragleave', 'drop'].forEach(evt => {
+    uploadArea.addEventListener(evt, e => {
       e.preventDefault();
       uploadArea.classList.remove('dragover');
-      handleFile(e.dataTransfer.files[0]);
+      if (evt === 'drop' && e.dataTransfer.files[0]) {
+        handleFile(e.dataTransfer.files[0]);
+      }
     });
-    fileInput.addEventListener('change', e => {
-      if (e.target.files[0]) handleFile(e.target.files[0]);
-    });
+  });
 
-    function handleFile(file) {
-      if (!file.type.startsWith('image/')) return;
-      
-      const reader = new FileReader();
-      reader.onload = e => {
-        preview.src = e.target.result;
-        preview.style.display = 'block';
-        currentImg = preview;
-        analyzeBtn.disabled = false;
-      };
-      reader.readAsDataURL(file);
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  // === АНАЛИЗ ===
+  analyzeBtn.addEventListener('click', async () => {
+    if (!currentTensor || !model) {
+      result.innerHTML = "Сначала загрузи фото!";
+      return;
     }
 
-    // Анализ
-    analyzeBtn.addEventListener('click', async () => {
-      if (!currentImg || !model) return;
+    analyzeBtn.disabled = true;
+    analyzeBtn.textContent = "Думаю...";
+    result.innerHTML = "";
 
-      analyzeBtn.disabled = true;
-      analyzeBtn.textContent = "🔄 Думаю...";
-      result.innerHTML = "";
+    try {
+      const predictions = await model.classify(currentTensor);
+      const top = predictions[0];
 
-      try {
-        const predictions = await model.classify(currentImg);
-        const top = predictions[0];
-        
-        const catKeywords = ['cat', 'kitten', 'tabby', 'persian', 'siamese', 'egyptian', 'lynx'];
-        const isCat = catKeywords.some(kw => top.className.toLowerCase().includes(kw));
+      const catKeywords = ['cat', 'kitten', 'tabby', 'persian', 'siamese', 'egyptian', 'lynx'];
+      const isCat = catKeywords.some(kw => top.className.toLowerCase().includes(kw));
 
-        if (isCat) {
-          result.innerHTML = `🐱 ДА! Это КОТ!<br><small>${top.className} — ${Math.round(top.probability * 100)}%</small>`;
-          result.className = 'cat';
-        } else {
-          result.innerHTML = `❌ Нет, это НЕ кот.<br><small>AI думает: ${top.className}</small>`;
-          result.className = 'not-cat';
-        }
-      } catch (err) {
-        result.innerHTML = "Ошибка 😿";
+      if (isCat) {
+        result.innerHTML = `
+          <div class="cat">ДА! Это КОТ!</div>
+          <small>${top.className} — ${(top.probability * 100).toFixed(1)}%</small>
+        `;
+      } else {
+        result.innerHTML = `
+          <div class="not-cat">Нет, это НЕ кот</div>
+          <small>AI думает: ${top.className}</small>
+        `;
       }
+    } catch (err) {
+      result.innerHTML = "Ошибка анализа";
+      console.error(err);
+    }
 
-      analyzeBtn.textContent = "🔍 Анализировать";
-      analyzeBtn.disabled = false;
-    });
+    analyzeBtn.textContent = "Анализировать";
+    analyzeBtn.disabled = false;
+  });
 
-    // Запуск
-    loadModel();
-  </script>
+  // Запуск
+  loadModel();
+</script>
 </body>
 </html>

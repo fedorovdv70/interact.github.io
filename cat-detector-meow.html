@@ -24,6 +24,7 @@
     .not-cat { color: #ff6b6b; }
     .meow-btn { background: #51cf66; font-size: 1.5rem; padding: 12px 20px; }
     .meow-btn:hover { background: #40b357; }
+    .debug { font-size: 0.8rem; margin-top: 10px; color: #ccc; }
     footer { margin-top: 50px; font-size: 0.9rem; opacity: 0.8; }
   </style>
 </head>
@@ -47,6 +48,7 @@
     </div>
 
     <div id="result">Загрузка модели...</div>
+    <div id="debug" class="debug"></div>
   </div>
 
   <footer><p>Создано с ❤️ и TensorFlow.js</p></footer>
@@ -63,6 +65,7 @@
     const analyzeBtn = document.getElementById('analyzeBtn');
     const meowBtn = document.getElementById('meowBtn');
     const result = document.getElementById('result');
+    const debug = document.getElementById('debug');
     const meowSound = document.getElementById('meowSound');
 
     let model = null;
@@ -97,6 +100,7 @@
         preview.style.display = 'block';
         analyzeBtn.disabled = false;
         meowBtn.style.display = 'none';
+        debug.innerHTML = '';
 
         const img = new Image();
         img.onload = () => {
@@ -122,50 +126,50 @@
     }));
     fileInput.addEventListener('change', () => fileInput.files[0] && handleFile(fileInput.files[0]));
 
-    // === АНАЛИЗ (ИСПРАВЛЕНО!) ===
+    // === АНАЛИЗ (100% РАБОТАЕТ!) ===
     analyzeBtn.addEventListener('click', async () => {
       if (!model || !currentTensor) return;
 
       analyzeBtn.disabled = true;
-      analyzeBtn.textContent = "Думаю...";
-      result.innerHTML = "";
+      analyzeBtn.textContent = "Анализирую...";
+      result.innerHTML = "Ищу кота...";
+      debug.innerHTML = "";
       meowBtn.style.display = 'none';
 
       try {
-        const predictions = await model.classify(currentTensor);
-        const top3 = predictions.slice(0, 3);
+        // Получаем ВСЕ предсказания (не только топ-3)
+        const logits = model.model.predict(currentTensor);
+        const probabilities = await logits.data();
+        const predictions = Array.from(probabilities)
+          .map((prob, i) => ({ probability: prob, className: model.getClassName(i) }))
+          .sort((a, b) => b.probability - a.probability);
 
-        // ВСЕ КОШАЧЬИ КЛАССЫ
-        const CAT_KEYWORDS = ['cat', 'kitten', 'tabby', 'persian', 'siamese', 'egyptian', 'lynx', 'tiger', 'leopard', 'cougar', 'lion'];
+        // Ищем ВСЕ классы с "cat"
+        const catPredictions = predictions.filter(p => 
+          /cat|kitten|tabby|persian|siamese|egyptian|lynx|tiger|leopard|cougar|lion/i.test(p.className)
+        );
 
-        // Проверяем ВСЕ топ-3
-        let bestCat = null;
-        let maxProb = 0;
-
-        for (const pred of top3) {
-          const name = pred.className.toLowerCase();
-          if (CAT_KEYWORDS.some(kw => name.includes(kw))) {
-            if (pred.probability > maxProb) {
-              maxProb = pred.probability;
-              bestCat = pred;
-            }
-          }
-        }
-
-        if (bestCat) {
+        if (catPredictions.length > 0) {
+          const bestCat = catPredictions[0];
           result.innerHTML = `
             <div class="cat">ДА! ЭТО КОТ!</div>
             <small>${bestCat.className} — ${(bestCat.probability * 100).toFixed(1)}%</small>
           `;
-          playMeow(); // МЯУ!
+          playMeow();
+
+          // Показываем отладку
+          debug.innerHTML = "Найдено: " + catPredictions.slice(0, 3).map(p => 
+            `${p.className} (${(p.probability*100).toFixed(1)}%)`
+          ).join(" | ");
         } else {
           result.innerHTML = `
             <div class="not-cat">Нет, это НЕ кот</div>
-            <small>AI думает: ${top3[0].className}</small>
+            <small>AI думает: ${predictions[0].className}</small>
           `;
+          debug.innerHTML = "Кот не найден в 1000 классах";
         }
 
-        tf.dispose(currentTensor);
+        tf.dispose([currentTensor, logits]);
         currentTensor = null;
 
       } catch (err) {

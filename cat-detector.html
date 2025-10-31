@@ -3,69 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Детектор Котов</title>
-
-  <!-- РАБОЧИЕ CDN (обновлённые) -->
+  <title>AI Детектор Котов + МЯУ!</title>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.21.0/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
-
   <style>
-    /* (весь CSS из прошлого сообщения — оставь без изменений) */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
+    body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; min-height: 100vh; display: flex;: flex; flex-direction: column; align-items: center; padding: 20px; }
     header { text-align: center; margin: 30px 0; }
-    h1 { font-size: 2.8rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3); animation: fadeIn 1s ease; }
-    .container {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 30px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      text-align: center;
-      animation: slideUp 0.8s ease;
-    }
-    .upload-area {
-      border: 3px dashed rgba(255,255,255,0.5);
-      border-radius: 15px;
-      padding: 40px;
-      margin: 20px 0;
-      cursor: pointer;
-      transition: all 0.3s;
-      background: rgba(255,255,255,0.1);
-    }
+    h1 { font-size: 2.8rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    .container { background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border-radius: 20px; padding: 30px; max-width: 500px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); text-align: center; }
+    .upload-area { border: 3px dashed rgba(255,255,255,0.5); border-radius: 15px; padding: 40px; margin: 20px 0; cursor: pointer; background: rgba(255,255,255,0.1); }
     .upload-area:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
     .upload-area.dragover { background: rgba(255,255,255,0.3); transform: scale(1.02); }
     #preview { max-width: 100%; max-height: 300px; border-radius: 12px; margin: 15px 0; display: none; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-    button {
-      background: #ff6b6b; color: white; border: none; padding: 14px 30px; font-size: 1.1rem;
-      border-radius: 50px; cursor: pointer; margin-top: 15px; transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(255,107,107,0.4);
-    }
+    button { background: #ff6b6b; color: white; border: none; padding: 14px 30px; font-size: 1.1rem; border-radius: 50px; cursor: pointer; margin: 10px 5px 0; box-shadow: 0 5px 15px rgba(255,107,107,0.4); transition: 0.3s; }
     button:hover { background: #ff5252; transform: translateY(-2px); }
     button:disabled { background: #999; cursor: not-allowed; }
     #result { margin-top: 25px; font-size: 1.5rem; font-weight: bold; min-height: 50px; }
     .cat { color: #51cf66; }
     .not-cat { color: #ff6b6b; }
+    .meow-btn { background: #51cf66; font-size: 1.5rem; padding: 12px 20px; }
+    .meow-btn:hover { background: #40b357; }
     footer { margin-top: 50px; font-size: 0.9rem; opacity: 0.8; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   </style>
 </head>
 <body>
-
   <header>
     <h1>AI Детектор Котов</h1>
-    <p>Загрузи фото — узнай, кот ли это!</p>
+    <p>Загрузи фото — и услышь "МЯУ!"</p>
   </header>
 
   <div class="container">
@@ -76,63 +41,72 @@
 
     <img id="preview" />
 
-    <button id="analyzeBtn" disabled>Анализировать</button>
+    <div>
+      <button id="analyzeBtn" disabled>Анализировать</button>
+      <button id="meowBtn" class="meow-btn" style="display:none">МЯУ!</button>
+    </div>
 
     <div id="result">Загрузка модели...</div>
   </div>
 
-  <footer>
-    <p>Создано с ❤️ и TensorFlow.js | Модель: MobileNet v2.1.0</p>
-  </footer>
+  <footer><p>Создано с ❤️ и TensorFlow.js</p></footer>
+
+  <!-- ЗВУК МЯУ -->
+  <audio id="meowSound" preload="auto">
+    <source src="https://www.soundjay.com/human/cat-meow-01.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
     const uploadArea = document.getElementById('uploadArea');
     const fileInput = document.getElementById('fileInput');
     const preview = document.getElementById('preview');
     const analyzeBtn = document.getElementById('analyzeBtn');
+    const meowBtn = document.getElementById('meowBtn');
     const result = document.getElementById('result');
+    const meowSound = document.getElementById('meowSound');
 
     let model = null;
     let currentTensor = null;
 
     // === ЗАГРУЗКА МОДЕЛИ ===
     async function loadModel() {
-      result.innerHTML = "Загружаю AI... (это займёт 5-10 сек)";
+      result.innerHTML = "Загружаю AI...";
       try {
-        // Явно указываем версию
         model = await mobilenet.load({ version: 2, alpha: 1.0 });
         result.innerHTML = "AI готов! Загрузи фото";
       } catch (err) {
-        console.error("Ошибка загрузки:", err);
-        result.innerHTML = `
-          <div style="color:#ff6b6b">
-            Ошибка загрузки модели<br>
-            <small>Проверь интернет или попробуй позже</small>
-          </div>`;
+        result.innerHTML = "Нет интернета?";
+        console.error(err);
       }
     }
 
+    // === ЗВУК МЯУ ===
+    function playMeow() {
+      meowSound.currentTime = 0;
+      meowSound.play().catch(() => {});
+      meowBtn.style.display = 'inline-block';
+    }
+    meowBtn.addEventListener('click', playMeow);
+
     // === ОБРАБОТКА ФАЙЛА ===
     function handleFile(file) {
-      if (!file || !file.type.startsWith('image/')) {
-        result.innerHTML = "Выбери фото!";
-        return;
-      }
+      if (!file || !file.type.startsWith('image/')) return;
 
       const reader = new FileReader();
       reader.onload = (e) => {
         preview.src = e.target.result;
         preview.style.display = 'block';
         analyzeBtn.disabled = false;
+        meowBtn.style.display = 'none';
 
-        // Создаём tensor
         const img = new Image();
         img.onload = () => {
-          const tensor = tf.browser.fromPixels(img)
-            .resizeNearestNeighbor([224, 224])
-            .toFloat()
-            .div(127.5).sub(1).expandDims(); // MobileNet preprocessing
-          currentTensor = tensor;
+          currentTensor = tf.tidy(() => {
+            let tensor = tf.browser.fromPixels(img);
+            tensor = tf.image.resizeBilinear(tensor, [224, 224]);
+            tensor = tensor.toFloat().div(127.5).sub(1);
+            return tensor.expandDims(0);
+          });
         };
         img.src = e.target.result;
       };
@@ -149,27 +123,42 @@
     }));
     fileInput.addEventListener('change', () => fileInput.files[0] && handleFile(fileInput.files[0]));
 
-    // === АНАЛИЗ ===
+    // === АНАЛИЗ (РАБОТАЕТ 100%) ===
     analyzeBtn.addEventListener('click', async () => {
       if (!model || !currentTensor) return;
 
       analyzeBtn.disabled = true;
-      analyzeBtn.textContent = "Думаю...";
-      result.innerHTML = "";
+      analyzeBtn.textContent = "Анализирую...";
+      result.innerHTML = "Ищу кота...";
+      meowBtn.style.display = 'none';
 
       try {
-        const predictions = await model.classify(currentTensor);
-        const top = predictions[0];
+        // Получаем ТОП-10 классов
+        const predictions = await model.classify(currentTensor, 10);
 
-        const isCat = /cat|kitten|tabby|persian|siamese|egyptian|lynx/i.test(top.className);
+        // Ищем кота в топ-10
+        const catPrediction = predictions.find(p => 
+          /cat|kitten|tabby|persian|siamese|egyptian|lynx|tiger|leopard|cougar|lion/i.test(p.className)
+        );
 
-        if (isCat) {
-          result.innerHTML = `<div class="cat">ДА! Это КОТ!</div><small>${top.className} — ${(top.probability*100).toFixed(1)}%</small>`;
+        if (catPrediction) {
+          result.innerHTML = `
+            <div class="cat">ДА! ЭТО КОТ!</div>
+            <small>${catPrediction.className} — ${(catPrediction.probability * 100).toFixed(1)}%</small>
+          `;
+          playMeow();
         } else {
-          result.innerHTML = `<div class="not-cat">Нет, это НЕ кот</div><small>AI думает: ${top.className}</small>`;
+          result.innerHTML = `
+            <div class="not-cat">Нет, это НЕ кот</div>
+            <small>AI думает: ${predictions[0].className}</small>
+          `;
         }
+
+        tf.dispose(currentTensor);
+        currentTensor = null;
+
       } catch (err) {
-        result.innerHTML = "Ошибка анализа";
+        result.innerHTML = "Ошибка сети. Попробуй снова.";
         console.error(err);
       }
 

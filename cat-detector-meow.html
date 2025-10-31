@@ -43,7 +43,7 @@
 
     <div>
       <button id="analyzeBtn" disabled>Анализировать</button>
-      <button id="meowBtn" class="meow-btn" style="display:none">Повторить МЯУ!</button>
+      <button id="meowBtn" class="meow-btn" style="display:none">МЯУ!</button>
     </div>
 
     <div id="result">Загрузка модели...</div>
@@ -54,7 +54,6 @@
   <!-- ЗВУК МЯУ -->
   <audio id="meowSound" preload="auto">
     <source src="https://www.soundjay.com/human/cat-meow-01.mp3" type="audio/mpeg">
-    Ваш браузер не поддерживает аудио.
   </audio>
 
   <script>
@@ -71,10 +70,10 @@
 
     // === ЗАГРУЗКА МОДЕЛИ ===
     async function loadModel() {
-      result.innerHTML = "Загружаю AI... (5-10 сек)";
+      result.innerHTML = "Загружаю AI...";
       try {
         model = await mobilenet.load({ version: 2, alpha: 1.0 });
-        result.innerHTML = "AI готов! Загрузи фото кота!";
+        result.innerHTML = "AI готов! Загрузи фото";
       } catch (err) {
         result.innerHTML = "Нет интернета?";
       }
@@ -86,7 +85,6 @@
       meowSound.play().catch(() => {});
       meowBtn.style.display = 'inline-block';
     }
-
     meowBtn.addEventListener('click', playMeow);
 
     // === ОБРАБОТКА ФАЙЛА ===
@@ -114,7 +112,7 @@
       reader.readAsDataURL(file);
     }
 
-    // === СОБЫТИЯ ЗАГРУЗКИ ===
+    // === СОБЫТИЯ ===
     uploadArea.addEventListener('click', () => fileInput.click());
     ['dragover', 'dragenter'].forEach(e => uploadArea.addEventListener(e, ev => { ev.preventDefault(); uploadArea.classList.add('dragover'); }));
     ['dragleave', 'drop'].forEach(e => uploadArea.addEventListener(e, ev => {
@@ -124,36 +122,46 @@
     }));
     fileInput.addEventListener('change', () => fileInput.files[0] && handleFile(fileInput.files[0]));
 
-    // === АНАЛИЗ ===
+    // === АНАЛИЗ (ИСПРАВЛЕНО!) ===
     analyzeBtn.addEventListener('click', async () => {
       if (!model || !currentTensor) return;
 
       analyzeBtn.disabled = true;
-      analyzeBtn.textContent = "Мяу-мяу... думаю...";
+      analyzeBtn.textContent = "Думаю...";
       result.innerHTML = "";
       meowBtn.style.display = 'none';
 
       try {
         const predictions = await model.classify(currentTensor);
-        const top = predictions[0];
         const top3 = predictions.slice(0, 3);
 
-        const CAT_CLASSES = ['egyptian cat', 'tabby', 'tiger cat', 'persian cat', 'siamese cat', 'lynx', 'leopard cat', 'cougar', 'lion', 'tiger'];
-        const isCat = CAT_CLASSES.some(cls => top.className.toLowerCase().includes(cls));
-        const bestCat = top3.find(p => CAT_CLASSES.some(cls => p.className.toLowerCase().includes(cls)));
+        // ВСЕ КОШАЧЬИ КЛАССЫ
+        const CAT_KEYWORDS = ['cat', 'kitten', 'tabby', 'persian', 'siamese', 'egyptian', 'lynx', 'tiger', 'leopard', 'cougar', 'lion'];
 
-        if (isCat || bestCat) {
-          const catName = (bestCat || top).className;
-          const prob = (bestCat || top).probability;
+        // Проверяем ВСЕ топ-3
+        let bestCat = null;
+        let maxProb = 0;
+
+        for (const pred of top3) {
+          const name = pred.className.toLowerCase();
+          if (CAT_KEYWORDS.some(kw => name.includes(kw))) {
+            if (pred.probability > maxProb) {
+              maxProb = pred.probability;
+              bestCat = pred;
+            }
+          }
+        }
+
+        if (bestCat) {
           result.innerHTML = `
             <div class="cat">ДА! ЭТО КОТ!</div>
-            <small>${catName} — ${(prob * 100).toFixed(1)}%</small>
+            <small>${bestCat.className} — ${(bestCat.probability * 100).toFixed(1)}%</small>
           `;
           playMeow(); // МЯУ!
         } else {
           result.innerHTML = `
             <div class="not-cat">Нет, это НЕ кот</div>
-            <small>AI думает: ${top.className}</small>
+            <small>AI думает: ${top3[0].className}</small>
           `;
         }
 
@@ -162,6 +170,7 @@
 
       } catch (err) {
         result.innerHTML = "Ошибка";
+        console.error(err);
       }
 
       analyzeBtn.textContent = "Анализировать";

@@ -1,1 +1,1663 @@
 
+<!doctype html>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="icon" href="https://quality-lab.ru/favicon.png" type="image/png">
+  <link rel="icon" href="https://quality-lab.ru/favicon.ico" type="image/x-icon">
+  <meta name="yandex-verification" content="697d35a60f4c9959" />
+  <title>Кто такие тест-дизайнеры и зачем они нужны &#8212; Лаборатория Качества</title>
+<meta name='robots' content='max-image-preview:large' />
+<meta name="keywords" content="тестировщик, Лаборатория качества, тестирование ПО, аутсорсинг, разработка ПО, консалтинг, обучение, импортозамещение, организация тестирования ПО"><meta itemprop="description" name="description" content="Кто такие тест-дизайнеры и зачем они нужны. Занимаясь тестированием, нужно учесть сроки проведения работ и обязательно соблюсти условие максимального покрытия тестами функционала ПО. Достигнуть"><meta property="og:title" content="Кто такие тест-дизайнеры и зачем они нужны"><meta property="og:description" content="Кто такие тест-дизайнеры и зачем они нужны. Занимаясь тестированием, нужно учесть сроки проведения работ и обязательно соблюсти условие максимального покрытия тестами функционала ПО. Достигнуть"><meta property="og:image" content="https://quality-lab.ru/wp-content/uploads/2017/02/1.png"><meta property="og:url" content="https://quality-lab.ru"><meta property="og:type" content="website"><meta property="og:site_name" content="Лаборатория качества"><meta property="og:locale" content="ru_RU"><script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/quality-lab.ru\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://quality-lab.ru/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://quality-lab.ru/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.6' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdiscuz-frontend-minimal-css-css' href='https://quality-lab.ru/wp-content/plugins/wpdiscuz/themes/default/style-minimal.css?ver=20' type='text/css' media='all' />
+<style id='wpdiscuz-frontend-minimal-css-inline-css' type='text/css'>
+ #wpdcom .ql-snow .ql-tooltip[data-mode="link"]::before{content:"Введите ссылку:"}#wpdcom .ql-snow .ql-tooltip.ql-editing a.ql-action::after{content:"Сохранить"}
+</style>
+<link rel='stylesheet' id='wpdiscuz-combo-css-css' href='https://quality-lab.ru/wp-content/plugins/wpdiscuz/assets/css/wpdiscuz-combo.min.css?ver=6.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='qlofficial-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/style.css?ver=6.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/plugin/bootstrap/css/bootstrap.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/plugin/fontawesome/css/all.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/plugin/slick/slick.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-theme-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/plugin/slick/slick-theme.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='toastr-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/plugin/toastr/toastr.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='masonry-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/assets/css/masonry-themes.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/plugin/fancybox/fancybox.min.css?ver=%20' type='text/css' media='all' />
+<link rel='stylesheet' id='main-style-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/assets/css/style.css?ver=4.0.27' type='text/css' media=' ' />
+<link rel='stylesheet' id='old-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/assets/css/old-styles.css?ver=4.0.27' type='text/css' media=' ' />
+<link rel='stylesheet' id='widget-css' href='https://quality-lab.ru/wp-content/themes/qlofficial/assets/css/widget.css?ver=4.0.27' type='text/css' media=' ' />
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/jquery/js/jquery.min.js?ver=6.6.2" id="jquery-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/jquery-ui/jquery-ui.js?ver=%20" id="jquery-ui-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/bootstrap/js/bootstrap.bundle.js?ver=%20" id="bootstrap-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/slick/slick.min.js?ver=%20" id="slick-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/toastr/toastr.min.js?ver=%20" id="toastr-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/masonry/masonry.pkgd.min.js?ver=%20" id="masonry-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/plugin/fancybox/fancybox.min.js?ver=%20" id="fancybox-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/cookies.js?ver=4.0.27" id="cookies-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/jquery.maskedinput.min.js?ver=4.0.27" id="maskedinput-js"></script>
+<link rel="canonical" href="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/" />
+<link rel="pingback" href="https://quality-lab.ru/xmlrpc.php">      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Organization",
+          "name": "Лаборатория качества",
+          "image": "https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/header-extended/notebook.png",
+          "logo": "https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/logo/logo.png",
+          "url": "https://quality-lab.ru",
+          "sameAs": ["https://t.me/Quality_lab_ru", "https://vc.ru/id1894539", "https://vk.com/quality_lab_ru"],
+          "description": "Лаборатория качества — это команда признанных экспертов в тестирование ПО",
+          "email": "ask@quality-lab.ru",
+          "telephone": "+7-495-120-00-96",
+          "address": {
+            "@type": "PostalAddress",
+            "postalCode": "101000",
+            "streetAddress": "Профсоюзная улица, 57",
+            "addressLocality": "Moscow",
+            "addressRegion": "Moscow",
+            "addressCountry": "RU"
+          }
+        }
+      </script>
+
+      
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org/",
+            "@type": "NewsArticle",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/"
+            },
+            "author": {
+              "@type": "Person",
+              "url": "https://quality-lab.ru/author/antonius/",
+              "name": "Антон Алексеев"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Лаборатория качества",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/logo/logo.png"
+              }
+            },
+            "headline": "Кто такие тест-дизайнеры и зачем они нужны",
+            "image": "https://quality-lab.ru/wp-content/uploads/2017/02/1.png",
+            "datePublished": "2017-02-20T11:44:50+03:00",
+            "dateModified": "2025-02-25T15:13:25+03:00"
+          }
+        </script>
+      <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
+
+<body class="post-template-default single single-post postid-4142 single-format-standard">
+
+<div id="page" class="site">
+
+  <header id="masthead" class="site-header ql-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-xl navbar-dark">
+        <a class="navbar-brand" href="https://quality-lab.ru">
+          <img src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/logo/logo.png" width="160" class="d-inline-block align-top" alt="Лаборатория качества" data-tooltip="tooltip" data-placement="bottom" data-html="true" title="">        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ql-nav ql-nav-fix ql-nav-borders ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://quality-lab.ru/outsourcing/">Аутсорсинг</a>
+              <div class="ql-dropdown-contacts-button" id="dropdownMenuReference" style="float: left;"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                <a class="nav-link" href="https://quality-lab.ru/functional-testing-web-applications/">Функциональное тестирование
+                  web-приложений</a>
+                <a class="nav-link" href="https://quality-lab.ru/functional-testing-mobile-applications/">Функциональное тестирование
+                  мобильных приложений</a>
+                <a class="nav-link" href="https://quality-lab.ru/functional-testing-desktop-applications/">Функциональное тестирование
+                  desktop-приложений</a>
+                <a class="nav-link" href="https://quality-lab.ru/automation-testing-web-products/">Автоматизация тестирования
+                  web-продуктов</a>
+                <a class="nav-link" href="https://quality-lab.ru/automation-testing-mobile-applications/">Автоматизация тестирования мобильных
+                  приложений</a>
+                <a class="nav-link" href="https://quality-lab.ru/usability-testing/">Юзабилити тестирование</a>
+                <a class="nav-link" href="https://quality-lab.ru/testing-sites-and-applications/">Тестирование сайтов и приложений</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false" data-reference="parent">Консалтинг</a>
+              <div class="ql-dropdown-contacts-button" style="float: left;" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" data-reference="parent"></div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                <a class="nav-link" href="https://quality-lab.ru/qa-audit/">QA-аудит</a>
+                <a class="nav-link" href="https://quality-lab.ru/consulting/">Консалтинг по тестированию</a>
+                <a class="nav-link" href="https://quality-lab.ru/importozameshcheniye/">Импортозамещение</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://quality-lab.ru/cases/">Кейсы</a>
+              <div class="ql-dropdown-contacts-button" id="dropdownMenuReference" style="float: left;"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent"></div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                <a class="nav-link" href="https://quality-lab.ru/our-clients/">Наши клиенты</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://quality-lab.ru/education/">Обучение</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://quality-lab.ru/blog/">Блог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://quality-lab.ru/contacts/">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false" data-reference="parent">О нас</a>
+              <div class="ql-dropdown-contacts-button" style="float: left;" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" data-reference="parent"></div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                <a class="nav-link" href="https://quality-lab.ru/about/">О компании</a>
+                <a class="nav-link" href="https://quality-lab.ru/team/#vacancy">Вакансии</a>
+                <a class="nav-link" href="https://quality-lab.ru/outstaff/">Аутстафф</a>
+              </div>
+            </li>
+          </ul>
+          <div class="ql-dropdown-contacts-container ql-box-mask d-none d-xl-block">
+            <div class="ql-dropdown-contacts-container__contact">
+                            <a href="https://wa.me/79202240126" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+                            <a href="https://t.me/Quality_Lab_bot?start=officialsitelk" target="_blank">
+                <i class="fab fa-telegram"></i>
+              </a>
+                            <a class="ql-font-special h6 border-0 mb-0 ml-1" href="tel:++74951200096"
+                 onclick="yaCounter44475886.reachGoal ('contact_tel_3822'); return true;">+7 (495) 120-00-96              </a>
+
+            </div>
+            <span class="ql-line-green mt-1"></span>
+          </div>
+          <div class="ql-mobile-contacts-container mt-2 d-xl-none pb-sm-5 pb-md-5">
+            <a href="https://wa.me/79202240126" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://t.me/Quality_Lab_bot?start=officialsitelk" target="_blank">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="tel:++74951200096" class="block-third" onclick="yaCounter44475886.reachGoal ('contact_tel_3822'); return true;">+7 (495) 120-00-96</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--        <div class="ql-header-mask"></div>-->
+  </header>
+
+      <section class="container-fluid ql-header-extended">
+      <div class="ql-header-mask"></div>
+    </section>
+  
+      <div id="breadcrumb" class="container">
+  <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="breadcrumb m-0 px-0 pb-0 pt-4" itemscope itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="3" /><meta name="itemListOrder" content="Ascending" /><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item ps-0 trail-begin"><a class="p-0" itemprop="item" href="https://quality-lab.ru" rel="home"><span itemprop="name">Главная</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item ps-0"><a itemprop="item" href="https://quality-lab.ru/blog/"><span itemprop="name">Блог о тестировании ПО</span></a><meta itemprop="position" content="2" /></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item ps-0 trail-end"><span itemprop="name">Кто такие тест-дизайнеры и зачем они нужны</span><meta itemprop="position" content="3" /></li></ul></nav></div>
+<!-- #breadcrumb -->
+  
+  <main id="content" class="site-content">
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-8 pr-sm-5">
+
+        
+          
+            <article id="post-4142" class="post-4142 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-testing tag-test-design-technics">
+
+              <header class="entry-header mt-4">
+                <h1 class="entry-title ql-font-special">Кто такие тест-дизайнеры и зачем они нужны</h2>                <div class="d-flex mb-3">
+                  <time class="entry-date published text-right d-inline-block" datetime="2017-02-20T11:44:50+03:00">20 февраля, 2017</time>
+                  <span class="entry-date published ml-3 d-lg-inline-block d-none">Просмотров 196024</span>
+
+                                      <span class="entry-date ml-3 disqus-comment-count">2 комментария</span>
+                  
+                </div>
+              </header>
+
+              <div class="caption"></div>
+              <nav id="text-menu" class="mb-4"></nav>
+
+              <div class="entry-content blog-content search-tag">
+                <div class="wp-block-image">
+<figure class="aligncenter is-resized"><a href="https://quality-lab.ru/wp-content/uploads/2017/02/1.png"><img decoding="async" src="https://quality-lab.ru/wp-content/uploads/2017/02/1.png" alt="Кто такие тест-дизайнеры и зачем они нужны" style="width:544px;height:auto"/></a></figure>
+</div>
+<p>Человек всегда старается окружить себя качественными вещами. Одеваться в красивую и практичную одежду, питаться натуральными продуктами, водить надежную машину – это ли не естественное стремление каждого? В данный список мы можем смело включить и&nbsp;<a href="https://quality-lab.ru/outsourcing/#automate_test_scenarios">отлаженное программное обеспечение</a>.</p>
+<p>Что такое «качественный программный продукт»? Это продукт, который выполняет поставленные перед ним задачи и удовлетворяет ожидания пользователей. Для достижения этого результата любая программа сначала проходит тестирование и только потом попадает в руки конечного потребителя. Так как сроки тестирования (как и любого процесса) имеют тенденцию стремиться к бесконечности, нам необходимо грамотное выстраивание процесса. И тут уже никак не обойтись без тест-дизайна.</p>
+<div class="py-2 text-center"><a href="#" class="ql-button-shortcode text-uppercase text-left" data-toggle="modal" data-target="#BlogModal69116444064c1">Обсудить проект</a></div>
+<div id="BlogModal69116444064c1" class="modal fade" tabindex="-1" role="dialog" data-blog-form="22482">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content ql-box-modal ql-bg-form p-3">
+<div class="modal-header">
+<h3 class="modal-title h4">Обсудить проект</h3>
+<p>            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><br />
+              <span aria-hidden="true">&times;</span><br />
+            </button>
+          </div>
+<div class="modal-body">
+<div class="wpcf7 no-js" id="wpcf7-f22482-p4142-o1" lang="ru-RU" dir="ltr" data-wpcf7-id="22482">
+<div class="screen-reader-response">
+<p role="status" aria-live="polite" aria-atomic="true">
+<ul></ul>
+</div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f22482-p4142-o1" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="22482" /><br />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" /><br />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" /><br />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f22482-p4142-o1" /><br />
+<input type="hidden" name="_wpcf7_container_post" value="4142" /><br />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" /><br />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<p><input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" /></p>
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<div style="display:none;">
+<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="sp-email" /></span>
+	</p>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="E-mail*" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="5" maxlength="2000" class="wpcf7-form-control wpcf7-textarea ql-form-textarea mt-2" aria-invalid="false" placeholder="Ссылка или описание проекта, который хотите обсудить" name="your-message"></textarea></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask" type="submit" value="Отправить" />
+</p>
+<div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div></div>
+</p></div>
+</p></div>
+</p></div>
+<h2 class="wp-block-heading">Тест-дизайнер — что это за зверь и с чем его едят?</h2>
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img fetchpriority="high" decoding="async" width="600" height="584" src="https://quality-lab.ru/wp-content/uploads/2017/02/4.png" alt="Кто такие тест-дизайнеры и зачем они нужны" class="wp-image-4154" style="width:366px;height:auto" srcset="https://quality-lab.ru/wp-content/uploads/2017/02/4.png 600w, https://quality-lab.ru/wp-content/uploads/2017/02/4-300x292.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+</div>
+<p><a href="https://www.protesting.ru/testing/testdesign.html" target="_blank" rel="noreferrer noopener nofollow"><span class='font-weight-bold'>Тест-дизайн</span></a>&nbsp;– это этап процесса тестирования ПО, на котором проектируются и создаются тестовые случаи (тест-кейсы) в соответствии с определёнными ранее критериями качества и целями тестирования. Соответственно, тест-дизайнер – это сотрудник, в чьи обязанности входит создание набора тестовых случаев, обеспечивающих оптимальное тестовое покрытие приложения.</p>
+<p>Тест-дизайнер должен&nbsp;<a href="https://quality-lab.ru/outsourcing/#product_quality_assurance">выстроить процесс тестирования</a>&nbsp;всех важнейших частей программного продукта, используя минимально возможное количество проверок. В небольших командах работа тест-дизайнера зачастую ложится на плечи рядового тестировщика, в крупных же компаниях функции тестирования и тест-дизайна, как правило, четко разделены между специалистами.</p>
+<p>В итоге цепочка тестирования выглядит так:</p>
+<ul class="wp-block-list">
+<li>тест-аналитик выполняет анализ продукта, разбивает его на составные части, расставляет приоритеты тестирования и составляет логическую карту приложения;</li>
+<li>тест-дизайнер на основании информации, полученной от аналитика, приступает к разработке тестов;</li>
+<li>тестировщик проводит непосредственно тестирование по уже готовым тест-кейсам.</li>
+</ul>
+<p>Мы сделаем это для вашего бизнеса быстро и качественно.</p>
+<div class="py-2 text-center"><a href="#" class="ql-button-shortcode text-uppercase text-left" data-toggle="modal" data-target="#BlogModal69116444069ff">Бесплатная консультация</a></div>
+<div id="BlogModal69116444069ff" class="modal fade" tabindex="-1" role="dialog" data-blog-form="22482">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content ql-box-modal ql-bg-form p-3">
+<div class="modal-header">
+<h3 class="modal-title h4">Бесплатная консультация</h3>
+<p>            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><br />
+              <span aria-hidden="true">&times;</span><br />
+            </button>
+          </div>
+<div class="modal-body">
+<div class="wpcf7 no-js" id="wpcf7-f22482-p4142-o2" lang="ru-RU" dir="ltr" data-wpcf7-id="22482">
+<div class="screen-reader-response">
+<p role="status" aria-live="polite" aria-atomic="true">
+<ul></ul>
+</div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f22482-p4142-o2" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="22482" /><br />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" /><br />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" /><br />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f22482-p4142-o2" /><br />
+<input type="hidden" name="_wpcf7_container_post" value="4142" /><br />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" /><br />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<p><input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" /></p>
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<div style="display:none;">
+<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="sp-email" /></span>
+	</p>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="E-mail*" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="5" maxlength="2000" class="wpcf7-form-control wpcf7-textarea ql-form-textarea mt-2" aria-invalid="false" placeholder="Ссылка или описание проекта, который хотите обсудить" name="your-message"></textarea></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask" type="submit" value="Отправить" />
+</p>
+<div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div></div>
+</p></div>
+</p></div>
+</p></div>
+<h2 class="wp-block-heading">Техники тест-дизайна</h2>
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" width="600" height="437" src="https://quality-lab.ru/wp-content/uploads/2017/02/2.png" alt="Кто такие тест-дизайнеры и зачем они нужны" class="wp-image-4152" style="width:512px;height:auto" srcset="https://quality-lab.ru/wp-content/uploads/2017/02/2.png 600w, https://quality-lab.ru/wp-content/uploads/2017/02/2-300x219.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+</div>
+<p><a href="https://testingbooks.ru/a-practitioners-guide-to-software-test-design/" target="_blank" rel="noreferrer noopener nofollow">Ли Копланд (Lee Copeland)</a>&nbsp;выделяет следующие техники, используемые в тест-дизайне:</p>
+<p><span class='font-weight-bold'>1. Тестирование Классами Эквивалентности (Equivalence Class Testing).</span><br />Тестовые&nbsp;<a href="https://w1zle.blogspot.com/2010/11/equivalence-class-testing.html" target="_blank" rel="noreferrer noopener nofollow">данные</a>&nbsp;разбиваются на определенные классы допустимых значений. В рамках каждого класса выполнение теста с любым значением тестовых данных приводит к эквивалентному результату. После определения классов необходимо выполнить хотя бы один тест в каждом классе.</p>
+<p>Продемонстрируем это на конкретном примере. Представим, что мы тестируем модуль для HR, который определяет возможность принятия на работу кандидата в зависимости от его возраста. Установлены следующие условия отбора:</p>
+<ul class="wp-block-list">
+<li>при возрасте от 0 до 16 лет – не нанимать;</li>
+<li>при возрасте от 16 до 18 лет – можно нанять только на part time;</li>
+<li>при возрасте от 18 до 55 лет – можно нанять на full time;</li>
+<li>при возрасте от 55 до 99 лет – не нанимать.</li>
+</ul>
+<p>Стоит ли проверять каждое значение? Более разумным видится тестирование диапазона каждого условия. Собственно, это и есть наши классы эквивалентности:</p>
+<ul class="wp-block-list">
+<li>класс эквивалентности NO: 0-16;</li>
+<li>класс эквивалентности PART: 17-18;</li>
+<li>класс эквивалентности FULL: 19-55;</li>
+<li>класс эквивалентности NO: 56-99.</li>
+</ul>
+<p>Как уже было указано, после определения классов эквивалентности мы должны выполнить тест с любым значением из диапазона класса. Таким образом, у нас остается только 4 позитивных тест-кейса вместо первоначальных 100 (0-99), например:</p>
+<ul class="wp-block-list">
+<li>10 – не нанимать;</li>
+<li>17 – нанимать на неполный день;</li>
+<li>40 – нанимать на полный день;</li>
+<li>80 – не нанимать.</li>
+</ul>
+<p><span class='font-weight-bold'>2. Тестирование Граничных Значений (Boundary Value Testing).</span><br />Эта&nbsp;<a href="https://w1zle.blogspot.com/2010/11/boundary-value-testing.html" target="_blank" rel="noreferrer noopener nofollow">техника</a>&nbsp;основана на том факте, что одним из самых слабых мест любого программного продукта является область граничных значений. Для начала выбираются диапазоны значений – как правило, это классы эквивалентности. Затем определяются границы диапазонов. На каждую из границ создается 3 тест-кейса: первый проверяет значение границы, второй – значение ниже границы, третий – значение выше границы.</p>
+<p>Нужно помнить, что «выше» и «ниже» – понятия относительные. Например, если мы говорим о границе 6$, то значение «ниже» будет 5$, а значение «выше» – 7$. Если речь идет о границе 6.00$, то значение «ниже» будет 5.99$, а значение «выше» – 6.01$. Не исключено, что значение «ниже» или «выше» границы может быть другим классом эквивалентности, уже охваченным нами. В этом случае нет смысла создавать дубликаты тест-кейсов.</p>
+<p>Вернемся к примеру, рассмотренному нами в технике классов эквивалентности:</p>
+<ul class="wp-block-list">
+<li>при возрасте от 0 до 16 лет – не нанимать;</li>
+<li>при возрасте от 16 до 18 лет – можно нанять только на part time;</li>
+<li>при возрасте от 18 до 55 лет – можно нанять на full time;</li>
+<li>при возрасте от 55 до 99 лет – не нанимать.</li>
+</ul>
+<p>Представим, что соответствующий код выглядит так:</p>
+<p><code>If (applicantAge &gt;= 0 &amp;&amp; applicantAge &lt;=16)<br />hireStatus="NO";<br />If (applicantAge &gt;= 16 &amp;&amp; applicantAge &lt;=17)<br />hireStatus="PART";<br />If (applicantAge &gt;= 18 &amp;&amp; applicantAge &lt;=54)<br />hireStatus="FULL";<br />If (applicantAge &gt;= 55 &amp;&amp; applicantAge &lt;=99)<br />hireStatus="NO";</code></p>
+<p>При предварительной оценке границ диапазонов требований сразу видна ошибка – диапазоны пересекаются, накладываются. По сути, условие должно быть записано по-другому:</p>
+<ul class="wp-block-list">
+<li>при возрасте от 0 до 15 лет – не нанимать;</li>
+<li>при возрасте от 16 до 17 лет – можно нанять только на part time;</li>
+<li>при возрасте от 18 до 54 лет – можно нанять на full time;</li>
+<li>при возрасте от 55 до 99 лет – не нанимать.</li>
+</ul>
+<p>В итоге корректный код должен выглядеть следующим образом:</p>
+<p><code>If (applicantAge &gt;= 0 &amp;&amp; applicantAge &lt;=15)<br />hireStatus="NO";<br />If (applicantAge &gt;= 16 &amp;&amp; applicantAge &lt;=17)<br />hireStatus="PART";<br />If (applicantAge &gt;= 18 &amp;&amp; applicantAge &lt;=54)<br />hireStatus="FULL";<br />If (applicantAge &gt;= 55 &amp;&amp; applicantAge &lt;=99)<br />hireStatus="NO";</code></p>
+<p>Таким образом, набор значений, для которых будут составлены тесты, будет выглядеть так: {-1, 0, 1}, {15, 16, 17}, {17, 18, 19}, {54, 55, 56}, {98, 99, 100}.</p>
+<p><span class='font-weight-bold'>3. Таблица Принятия Решений (Decision Table Testing).</span><br /><a href="https://w1zle.blogspot.com/2010/11/2-equivalence-class-testing-boundary.html" target="_blank" rel="noreferrer noopener nofollow">Таблицы решений</a>&nbsp;– это удобный инструмент для фиксирования требований и описания функциональности приложения. Таблицами очень удобно описывать бизнес-логику приложения, и они могут служить отличной основой для создания тест-кейсов.</p>
+<p>Таблицы решений описывают логику приложения, основываясь на условиях системы, характеризующих ее состояния. Каждая таблица должна описывать одно состояние системы. Шаблон таблицы решений следующий:</p>
+<div class="wp-block-image">
+<figure class="aligncenter"><a href="https://quality-lab.ru/wp-content/uploads/2017/02/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-1.jpg"><img decoding="async" src="https://quality-lab.ru/wp-content/uploads/2017/02/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-1.jpg" alt="Кто такие тест-дизайнеры и зачем они нужны"/></a></figure>
+</div>
+<p><em>По клику на картинку откроется полная версия.</em></p>
+<p>Для наглядности обратимся к примерам. Допустим, нам необходимо протестировать приложение, которое вычисляет скидку на страхование автомобилей в зависимости от того, был ли водитель хорошим студентом и состоит ли он в браке. Начнем с выявления условий:</p>
+<div class="wp-block-image">
+<figure class="aligncenter"><a href="https://quality-lab.ru/wp-content/uploads/2017/02/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-2.jpg"><img decoding="async" src="https://quality-lab.ru/wp-content/uploads/2017/02/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-2.jpg" alt="Кто такие тест-дизайнеры и зачем они нужны"/></a></figure>
+</div>
+<p><em>По клику на картинку откроется полная версия.</em></p>
+<p>Получаем:</p>
+<ul class="wp-block-list">
+<li>Если водитель был примерным студентом и при этом еще и женат, то ему предоставляется скидка $60.</li>
+<li>В случае, когда водитель женат, но студентом он был так себе, то ему предоставляется скидка $50.</li>
+<li>Если же он не женат, но был хорошим студентом, то ему предоставляется скидка $40.</li>
+<li>В случае, когда человек не женат и не был хорошим студентом, ему предоставляется скидка $30.</li>
+</ul>
+<p>Предоставление скидки в зависимости от комбинации условий и будет нашим действием в приложении. Сведем описанные условия в таблицу:</p>
+<div class="wp-block-image">
+<figure class="aligncenter"><a href="https://quality-lab.ru/wp-content/uploads/2017/02/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-3.jpg"><img decoding="async" src="https://quality-lab.ru/wp-content/uploads/2017/02/%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9-3.jpg" alt="Кто такие тест-дизайнеры и зачем они нужны"/></a></figure>
+</div>
+<p><em>По клику на картинку откроется полная версия.</em></p>
+<p>После этого нам следует составить хотя бы по одному тест-кейсу для каждого из предполагаемых тестов.</p>
+<p><span class='font-weight-bold'>4. Тестирование Состояний и Переходов (State-Transition Testing).</span></p>
+<p>Система переходит в то или иное&nbsp;<a href="https://w1zle.blogspot.com/2010/11/state-transition-testing.html" target="_blank" rel="noreferrer noopener nofollow">состояние</a>&nbsp;в зависимости от того, какие операции над нею выполняются. Для наглядности возьмем классический пример покупки авиабилетов:</p>
+<div class="wp-block-image">
+<figure class="aligncenter"><a href="https://quality-lab.ru/wp-content/uploads/2017/02/unnamed-file.jpg"><img decoding="async" src="https://quality-lab.ru/wp-content/uploads/2017/02/unnamed-file.jpg" alt="Кто такие тест-дизайнеры и зачем они нужны"/></a></figure>
+</div>
+<ul class="wp-block-list">
+<li><span class='font-weight-bold'>Состояние</span>&nbsp;(<em>state</em>, представленное в виде круга на диаграмме) – это состояние приложения, в котором оно ожидает одно или более событий. Состояние помнит входные данные, полученные до этого, и показывает, как приложение будет реагировать на полученные события. События могут вызывать смену состояния и/или инициировать действия.</li>
+<li><span class='font-weight-bold'>Переход</span>&nbsp;(<em>transition</em>, представлено в виде стрелки на диаграмме) – это преобразование одного состояния в другое, происходящее по событию.</li>
+<li><span class='font-weight-bold'>Событие</span>&nbsp;(<em>event</em>, представленное ярлыком над стрелкой) – это что-то, что заставляет приложение поменять свое состояние. События могут поступать извне приложения, через интерфейс самого приложения. Само приложение также может генерировать события (например, событие «истек таймер»). Когда происходит событие, приложение может поменять (или не поменять) состояние и выполнить (или не выполнить) действие. События могут иметь параметры (например, событие «Оплата» может иметь параметры «Наличные деньги», «Чек», «Приходная карта» или «Кредитная карта»).</li>
+<li><span class='font-weight-bold'>Действие</span>&nbsp;(<em>action</em>, представлено после «/» в ярлыке над переходом) инициируется сменой состояния («напечатать билет», «показать на экране» и др.). Обычно действия создают что-то, что является выходными/возвращаемыми данными системы. Действия возникают при переходах, сами по себе состояния пассивны.</li>
+<li><span class='font-weight-bold'>Точка входа</span>&nbsp;обозначается черным кружком.</li>
+<li><span class='font-weight-bold'>Точка выхода</span>&nbsp;показывается на диаграмме в виде мишени.</li>
+</ul>
+<p>Все начинается с точки входа. Мы (клиенты) предоставляем авиакомпании информацию для бронирования. Служащий авиакомпании является интерфейсом между нами и системой бронирования авиабилетов. Он использует предоставленную нами информацию для создания бронирования. После этого наше бронирование находится в состоянии «Создано». После создания бронирования система также запускает таймер. Если время таймера истекает, а забронированный билет еще не оплачен, то система автоматически снимает бронь.</p>
+<p>Каждое действие, выполненное над билетом, и соответствующее состояние (отмена бронирования пользователем, оплата билета, получение билета на руки, и т. д.) отображаются в блок-схеме. На основании полученной схемы составляется набор тестов, в котором хотя бы раз проверяются все переходы.</p>
+<p>Некоторым исследователям представляется более удобным свести весь процесс в таблицу состояний и переходов. Конечно, таблица не так наглядна, как схема, но зато она получается более полной и систематизированной, так как определяет все возможные State-Transition варианты, а не только валидные.</p>
+<p><span class='font-weight-bold'>5. Метод Парного Тестирования (Pairwise testing).</span><br /><a href="https://software-testing.ru/library/testing/test-analysis/1304-pairing" target="_blank" rel="noreferrer noopener nofollow">Метод парного тестирования</a>&nbsp;основан на следующей идее: подавляющее большинство багов выявляется тестом, проверяющим либо один параметр, либо сочетание двух. Ошибки, причиной которых явились комбинации трех и более параметров, как правило, значительно менее критичны.</p>
+<p>Допустим, что мы имеем систему, которая зависит от нескольких входных параметров. Да, мы можем проверить все возможные варианты сочетания этих параметров. Но даже для случая, когда каждый из 10 параметров имеет всего два значения (Вкл/Выкл), мы получаем 2<sup>10</sup>&nbsp;= 1024 комбинаций! Используя метод парного тестирования, мы не тестируем все возможные сочетания входных параметров, а составляем тестовые наборы так, чтобы каждое значение параметра хотя бы один раз сочеталось с каждым значением остальных тестируемых параметров. Таким образом, метод существенно сокращает количество тестов, а значит, и время тестирования.</p>
+<p>Но изюминка метода не в том, чтобы перебрать все возможные пары параметров, а в том, чтобы подобрать пары, обеспечивающие максимально эффективную проверку при минимальном количестве выполняемых тестов. С этой задачей помогают справиться математические методы, называемые&nbsp;<a href="https://en.wikipedia.org/wiki/Orthogonal_array" target="_blank" rel="noreferrer noopener nofollow">ортогональными таблицами</a>. Также существует ряд инструментов, которые помогают автоматизировать этот процесс (например,&nbsp;<a href="https://www.satisfice.com/tools.shtml" target="_blank" rel="noreferrer noopener nofollow">AllPairs</a>).</p>
+<p><span class='font-weight-bold'>6. Доменный анализ (Domain Analysis Testing).</span><br />Это техника основана на разбиении диапазона возможных значений переменной (или переменных) на поддиапазоны (или домены), с последующим выбором одного или нескольких значений из каждого домена для тестирования. Во многом доменное тестирование пересекается с известными нам техниками разбиения на классы эквивалентности и анализа граничных значений. Но доменное тестирование не ограничивается перечисленными техниками. Оно включает в себя как анализ зависимостей между переменными, так и поиск тех значений переменных, которые несут в себе большой риск (не только на границах).</p>
+<p><span class='font-weight-bold'>7. Сценарий использования (Use Case Testing).</span><br />Use Case&nbsp;описывает сценарий взаимодействия двух и более участников (как правило – пользователя и системы). Пользователем может выступать как человек, так и другая система. Для тестировщиков Use Case являются отличной базой для формирования тестовых сценариев (тест-кейсов), так как они описывают, в каком контексте должно производиться каждое действие пользователя. Use Case, по умолчанию, являются тестируемыми требованиями, так как в них всегда указана цель, которой нужно достигнуть, и шаги, которые надо для этого воспроизвести.</p>
+<h2 class="wp-block-heading">Что тут думать, трясти надо!</h2>
+<p>Как гласит известное определение,&nbsp;<span class='font-weight-bold'><em>программирование – это размышление, а не печатание</em></span>. Автор совершенно уверен, что то же самое можно сказать и о тестировании. Так для чего же нам необходимы тест-дизайнеры? Зачем тратить время на анализ и дизайн, если его можно использовать на выполнение массы дополнительных проверок?</p>
+<p>Мы знаем об этом все. Напишите нам.</p>
+<div class="py-2 text-center"><a href="#" class="ql-button-shortcode text-uppercase text-left" data-toggle="modal" data-target="#BlogModal6911644406d5e">Оставить заявку</a></div>
+<div id="BlogModal6911644406d5e" class="modal fade" tabindex="-1" role="dialog" data-blog-form="22482">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content ql-box-modal ql-bg-form p-3">
+<div class="modal-header">
+<h3 class="modal-title h4">Оставить заявку</h3>
+<p>            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><br />
+              <span aria-hidden="true">&times;</span><br />
+            </button>
+          </div>
+<div class="modal-body">
+<div class="wpcf7 no-js" id="wpcf7-f22482-p4142-o3" lang="ru-RU" dir="ltr" data-wpcf7-id="22482">
+<div class="screen-reader-response">
+<p role="status" aria-live="polite" aria-atomic="true">
+<ul></ul>
+</div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f22482-p4142-o3" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="22482" /><br />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" /><br />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" /><br />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f22482-p4142-o3" /><br />
+<input type="hidden" name="_wpcf7_container_post" value="4142" /><br />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" /><br />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<p><input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" /></p>
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<div style="display:none;">
+<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="sp-email" /></span>
+	</p>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="E-mail*" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="5" maxlength="2000" class="wpcf7-form-control wpcf7-textarea ql-form-textarea mt-2" aria-invalid="false" placeholder="Ссылка или описание проекта, который хотите обсудить" name="your-message"></textarea></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask" type="submit" value="Отправить" />
+</p>
+<div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div></div>
+</p></div>
+</p></div>
+</p></div>
+<div class="wp-block-image">
+<figure class="alignleft size-full is-resized"><img decoding="async" width="600" height="941" src="https://quality-lab.ru/wp-content/uploads/2017/02/3.png" alt="Кто такие тест-дизайнеры и зачем они нужны" class="wp-image-4153" style="width:160px;height:auto" srcset="https://quality-lab.ru/wp-content/uploads/2017/02/3.png 600w, https://quality-lab.ru/wp-content/uploads/2017/02/3-191x300.png 191w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+</div>
+<p>Из приведенных выше примеров видно, что применение дизайна позволяет значительно сократить количество тестов, а также сконцентрироваться на наиболее уязвимых и важных участках функционала. Не зря уже сейчас многие компании не только вводят отдельные должности «тест-дизайнера» или «тест-аналитика», но и обучают их на специальных&nbsp;<a href="https://quality-lab.ru/company-course/test-analysts-school/">тренингах</a>.</p>
+<p>Действительно: какой смысл, допустим, от полного тестового покрытия формы авторизации, если при этом не будет корректно работать механизм оплаты за товар в интернет-магазине? Ведь за то время, пока тестировщик 100 тестами проверит 100 значений, тест-дизайнер придумает, как за 10 тестов проверить 1000 значений! Таким образом, усилия, затраченные на тест-дизайн, с лихвой окупятся качеством выполнения тестирования.</p>
+              </div>
+
+              <footer class="entry-footer">
+                <div class="mt-4 text-right">
+                  <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                  <script src="https://yastatic.net/share2/share.js"></script>
+                  <div class="ya-share2" data-services="vkontakte,twitter,linkedin,telegram"></div>
+                </div>
+                                  <div class="entry-tags clearfix mt-4">
+                    <i class="fa fa-tags" aria-hidden="true"></i> <a href="https://quality-lab.ru/tag/testing/" rel="tag">Тестирование</a><a href="https://quality-lab.ru/tag/test-design-technics/" rel="tag">Техники тест-дизайна</a>                  </div>
+                              </footer>
+            </article><!-- #post-4142 -->
+          
+            <div class="h3 ql-font-special">Другие статьи</div>
+            <div class="ql-line-black mb-3"></div>
+            <div class="recent_posts recent-slider">
+              
+    <div class="col-lg-4">
+      <div class="recent-post">
+        <div>
+          <a class="clearfix border-0" href="https://quality-lab.ru/blog/key-principles-of-gray-box-testing/"><img width="300" height="222" src="https://quality-lab.ru/wp-content/uploads/2017/06/key-principles-of-gray-box-testing-1-300x222.png" class="attachment-medium size-medium wp-post-image" alt="Особенности тестирования «серого ящика»" title="Особенности тестирования «серого ящика»" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2017/06/key-principles-of-gray-box-testing-1-300x222.png 300w, https://quality-lab.ru/wp-content/uploads/2017/06/key-principles-of-gray-box-testing-1.png 600w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+        </div>
+        <div>
+          <time class="entry-date published mb-1 d-block">19 июня, 2017</time>
+          <div class="ql-popular-post">
+            <a class="clearfix" href="https://quality-lab.ru/blog/key-principles-of-gray-box-testing/">
+              Особенности тестирования «серого ящика»            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-4">
+      <div class="recent-post">
+        <div>
+          <a class="clearfix border-0" href="https://quality-lab.ru/blog/recept-sistemy-proektnogo-upravleniya-osnovnye-ingredienty-i-sposob-prigotovleniya/"><img width="300" height="249" src="https://quality-lab.ru/wp-content/uploads/2023/03/1-1-300x249.png" class="attachment-medium size-medium wp-post-image" alt="Рецепт системы проектного управления: основные ингредиенты и способ приготовления" title="Рецепт системы проектного управления: основные ингредиенты и способ приготовления" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2023/03/1-1-300x249.png 300w, https://quality-lab.ru/wp-content/uploads/2023/03/1-1-1024x851.png 1024w, https://quality-lab.ru/wp-content/uploads/2023/03/1-1-768x639.png 768w, https://quality-lab.ru/wp-content/uploads/2023/03/1-1.png 1299w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+        </div>
+        <div>
+          <time class="entry-date published mb-1 d-block">27 марта, 2023</time>
+          <div class="ql-popular-post">
+            <a class="clearfix" href="https://quality-lab.ru/blog/recept-sistemy-proektnogo-upravleniya-osnovnye-ingredienty-i-sposob-prigotovleniya/">
+              Рецепт системы проектного управления: основные инг&hellip;            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-4">
+      <div class="recent-post">
+        <div>
+          <a class="clearfix border-0" href="https://quality-lab.ru/blog/audit-processov-razrabotki-po-dlya-chego-nuzhen-i-o-chem-stoit-znat/"><img width="300" height="242" src="https://quality-lab.ru/wp-content/uploads/2022/10/1-300x242.png" class="attachment-medium size-medium wp-post-image" alt="Аудит процессов разработки ПО: для чего нужен и о чем стоит знать?" title="Аудит процессов разработки ПО: для чего нужен и о чем стоит знать?" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2022/10/1-300x242.png 300w, https://quality-lab.ru/wp-content/uploads/2022/10/1-1024x827.png 1024w, https://quality-lab.ru/wp-content/uploads/2022/10/1-768x620.png 768w, https://quality-lab.ru/wp-content/uploads/2022/10/1.png 1337w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+        </div>
+        <div>
+          <time class="entry-date published mb-1 d-block">12 октября, 2022</time>
+          <div class="ql-popular-post">
+            <a class="clearfix" href="https://quality-lab.ru/blog/audit-processov-razrabotki-po-dlya-chego-nuzhen-i-o-chem-stoit-znat/">
+              Аудит процессов разработки ПО: для чего нужен и о&hellip;            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-4">
+      <div class="recent-post">
+        <div>
+          <a class="clearfix border-0" href="https://quality-lab.ru/blog/mafiya-optimizaciya-predlozhenie-ot-kotorogo-nevozmozhno-otkazatsya/"><img width="300" height="249" src="https://quality-lab.ru/wp-content/uploads/2017/12/211217_5-300x249.png" class="attachment-medium size-medium wp-post-image" alt="Мафия-оптимизация: предложение, от которого невозможно отказаться" title="Мафия-оптимизация: предложение, от которого невозможно отказаться" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2017/12/211217_5-300x249.png 300w, https://quality-lab.ru/wp-content/uploads/2017/12/211217_5-768x637.png 768w, https://quality-lab.ru/wp-content/uploads/2017/12/211217_5.png 992w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+        </div>
+        <div>
+          <time class="entry-date published mb-1 d-block">19 ноября, 2018</time>
+          <div class="ql-popular-post">
+            <a class="clearfix" href="https://quality-lab.ru/blog/mafiya-optimizaciya-predlozhenie-ot-kotorogo-nevozmozhno-otkazatsya/">
+              Мафия-оптимизация: предложение, от которого невозм&hellip;            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-4">
+      <div class="recent-post">
+        <div>
+          <a class="clearfix border-0" href="https://quality-lab.ru/blog/kak-provodit-smoke-i-regress-testirovanie-bez-instrukcij/"><img width="300" height="232" src="https://quality-lab.ru/wp-content/uploads/2019/07/4.-300x232.png" class="attachment-medium size-medium wp-post-image" alt="Как проводить smoke и regress-тестирование без инструкций, ТЗ, предыдущих отчетов и даже машин?" title="Как проводить smoke и regress-тестирование без инструкций, ТЗ, предыдущих отчетов и даже машин?" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2019/07/4.-300x232.png 300w, https://quality-lab.ru/wp-content/uploads/2019/07/4..png 700w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+        </div>
+        <div>
+          <time class="entry-date published mb-1 d-block">11 июля, 2019</time>
+          <div class="ql-popular-post">
+            <a class="clearfix" href="https://quality-lab.ru/blog/kak-provodit-smoke-i-regress-testirovanie-bez-instrukcij/">
+              Как проводить smoke и regress-тестирование без инс&hellip;            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-4">
+      <div class="recent-post">
+        <div>
+          <a class="clearfix border-0" href="https://quality-lab.ru/blog/ux-expertise-is-more-than-usability/"><img width="300" height="278" src="https://quality-lab.ru/wp-content/uploads/2018/05/UX-02-300x278.png" class="attachment-medium size-medium wp-post-image" alt="UX-экспертиза – больше, чем юзабилити" title="UX-экспертиза – больше, чем юзабилити" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2018/05/UX-02-300x278.png 300w, https://quality-lab.ru/wp-content/uploads/2018/05/UX-02.png 600w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+        </div>
+        <div>
+          <time class="entry-date published mb-1 d-block">25 мая, 2018</time>
+          <div class="ql-popular-post">
+            <a class="clearfix" href="https://quality-lab.ru/blog/ux-expertise-is-more-than-usability/">
+              UX-экспертиза – больше, чем юзабилити            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+              </div>
+
+                <div class="wpdiscuz_top_clearing"></div>
+    <div id='comments' class='comments-area'><div id='respond' style='width: 0;height: 0;clear: both;margin: 0;padding: 0;'></div><div id='wpd-post-rating' class='wpd-not-rated'>
+            <div class='wpd-rating-wrap'>
+            <div class='wpd-rating-left'></div>
+            <div class='wpd-rating-data'>
+                <div class='wpd-rating-value'>
+                    <span class='wpdrv'>5</span>
+                    <span class='wpdrc'>1</span>
+                    <span class='wpdrt'>голос</span></div>
+                <div class='wpd-rating-title'>Рейтинг статьи</div>
+                <div class='wpd-rating-stars'><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star wpd-active' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star wpd-active' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star wpd-active' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star wpd-active' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star wpd-active' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg></div><div class='wpd-rate-starts'><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg></div></div>
+            <div class='wpd-rating-right'></div></div></div><div style='display: none;' itemscope itemtype='https://schema.org/Product'><meta itemprop='name' content='Рейтинг статьи'><div style='display: none;' itemprop='aggregateRating' itemscope itemtype='https://schema.org/AggregateRating'><meta itemprop='bestRating' content='5'><meta itemprop='worstRating' content='1'><meta itemprop='ratingValue' content='5'><meta itemprop='ratingCount' content='1'></div></div>    <div id="wpdcom" class="wpdiscuz_unauth wpd-minimal wpd-layout-1 wpd-comments-open">
+                    <div class="wc_social_plugin_wrapper">
+                            </div>
+            <div class="wpd-form-wrap">
+                <div class="wpd-form-head">
+                                            <div class="wpd-sbs-toggle">
+                            <i class="far fa-envelope"></i> <span
+                                    class="wpd-sbs-title">Подписаться</span>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                                            <div class="wpd-auth">
+                                                <div class="wpd-login">
+                                                    </div>
+                    </div>
+                </div>
+                                                    <div class="wpdiscuz-subscribe-bar wpdiscuz-hidden">
+                                                    <form action="https://quality-lab.ru/wp-admin/admin-ajax.php?action=wpdAddSubscription"
+                                  method="post" id="wpdiscuz-subscribe-form">
+                                <div class="first-block">
+                                    <div class="wpdiscuz-subscribe-form-intro">Уведомить о </div>
+                                    <div class="wpdiscuz-subscribe-form-option"
+                                         style="width:40%;">
+                                        
+                                        <select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+																					                                                <option value="post">новых комментариях</option>
+																																												                                                <option value="all_comment" >новых ответах</option>
+																							                                        </select>
+                                    </div>
+                                </div>
+
+                                                                <div class="second-block">
+                                    <div class="wpdiscuz-subscribe-form-intro">Email </div>
+                                    <div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+                                        <input class="email" type="email" name="wpdiscuzSubscriptionEmail"
+                                               required="required" value=""
+                                               placeholder="Email"/>
+                                    </div>
+                                </div>
+                                                                                                        <div class="wpdiscuz-subscribe-agreement">
+                                        <input id="show_subscription_agreement" type="checkbox" required="required"
+                                               name="show_subscription_agreement" value="1">
+                                        <label for="show_subscription_agreement">Я даю свое согласие на обработку персональных данных</label>
+                                    </div>
+                                    <input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="8c7228b837" /><input type="hidden" name="_wp_http_referer" value="/blog/roles-and-responsibilities-of-test-designer/" />                                <div class="wpdiscuz-subscribe-form-button">
+                                    <input id="wpdiscuz_subscription_button" class="wpd-prim-button wpd_not_clicked"
+                                           type="submit"
+                                           value="Подписаться"
+                                           name="wpdiscuz_subscription_button"/>
+                                </div>
+                            </form>
+                                                </div>
+                            <div class="wpd-form wpd-form-wrapper wpd-main-form-wrapper" id='wpd-main-form-wrapper-0_0'>
+                                        <form  method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd_main_comm_form"                >
+                                        <div class="wpd-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+                                                                                                        <div class="wpd-avatar">
+                                        <img alt='guest' src='https://secure.gravatar.com/avatar/0186b122cf5276aade38da6447754273?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/0186b122cf5276aade38da6447754273?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' loading='lazy' decoding='async'/>                                    </div>
+                                                <div id="wpd-editor-wraper-0_0" style="display: none;">
+                <div id="wpd-editor-char-counter-0_0"
+                     class="wpd-editor-char-counter"></div>
+                <label style="display: none;" for="wc-textarea-0_0">Label</label>
+                <textarea id="wc-textarea-0_0" name="wc_comment"
+                          class="wc_comment wpd-field"></textarea>
+                <div id="wpd-editor-0_0"></div>
+                        <div id="wpd-editor-toolbar-0_0">
+                            <button title="Жирный"
+                        class="ql-bold"  ></button>
+                                <button title="Курсив"
+                        class="ql-italic"  ></button>
+                                <button title="Подчеркивание"
+                        class="ql-underline"  ></button>
+                                <button title="Зачеркивание"
+                        class="ql-strike"  ></button>
+                                <button title="Упорядоченный список"
+                        class="ql-list" value='ordered' ></button>
+                                <button title="Неупорядоченный список"
+                        class="ql-list" value='bullet' ></button>
+                                <button title="Цитата"
+                        class="ql-blockquote"  ></button>
+                                <button title="Блок кода"
+                        class="ql-code-block"  ></button>
+                                <button title="Ссылка"
+                        class="ql-link"  ></button>
+                                <button title="Исходный код"
+                        class="ql-sourcecode"  data-wpde_button_name='sourcecode'>{}</button>
+                                <button title="Спойлер"
+                        class="ql-spoiler"  data-wpde_button_name='spoiler'>[+]</button>
+                            <div class="wpd-editor-buttons-right">
+                <span class='wmu-upload-wrap' wpd-tooltip='Прикрепить изображение к этому комментарию' wpd-tooltip-position='left'><label class='wmu-add'><i class='far fa-image'></i><input style='display:none;' class='wmu-add-files' type='file' name='wmu_files[]'  accept='image/*'/></label></span>            </div>
+        </div>
+                    </div>
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="wpd-form-foot" style='display:none;'>
+                        <div class="wpdiscuz-textarea-foot">
+                                                        <div class="wpdiscuz-button-actions"><div class='wmu-action-wrap'><div class='wmu-tabs wmu-images-tab wmu-hide'></div></div></div>
+                        </div>
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                                class="fas fa-user"></i>
+                    </div>
+                                    <input id="wc_name-0_0" value="" required='required' aria-required='true'                       class="wc_name wpd-field" type="text"
+                       name="wc_name"
+                       placeholder="Имя*"
+                       maxlength="50" pattern='.{3,50}'                       title="">
+                <label for="wc_name-0_0"
+                       class="wpdlb">Имя*</label>
+                            </div>
+                        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                                class="fas fa-at"></i>
+                    </div>
+                                    <input id="wc_email-0_0" value="" required='required' aria-required='true'                       class="wc_email wpd-field" type="email"
+                       name="wc_email"
+                       placeholder="Email*"/>
+                <label for="wc_email-0_0"
+                       class="wpdlb">Email*</label>
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                        <div class="wpd-field-captcha wpdiscuz-item">
+                <div class="wpdiscuz-recaptcha" id='wpdiscuz-recaptcha-0_0'></div>
+                <input id='wpdiscuz-recaptcha-field-0_0' type='hidden' name='wc_captcha'
+                       value="" required="required" aria-required='true' class="wpdiscuz_reset"/>
+                <div class="clearfix"></div>
+            </div>
+                    <div class="wc-field-submit">
+                                                                                    <label class="wpd_label"
+                               wpd-tooltip="Сообщать о всех новых ответах на мои комментарии">
+                            <input id="wc_notification_new_comment-0_0"
+                                   class="wc_notification_new_comment-0_0 wpd_label__checkbox"
+                                   value="comment" type="checkbox"
+                                   name="wpdiscuz_notification_type" checked='checked'/>
+                            <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                        </label>
+                                                                <input id="wpd-field-submit-0_0"
+                   class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit"
+                   name="submit" value="Оставить комментарий"
+                   aria-label="Оставить комментарий"/>
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                                        <input type="hidden" class="wpdiscuz_unique_id" value="0_0"
+                           name="wpdiscuz_unique_id">
+                                    </form>
+                        </div>
+                <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                    <div class="wpd-form wpd-form-wrapper wpd-secondary-form-wrapper" id='wpd-secondary-form-wrapper-wpdiscuzuniqueid' style='display: none;'>
+                            <div class="wpd-secondary-forms-social-content"></div>
+                <div class="clearfix"></div>
+                                        <form  method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd-secondary-form-wrapper"                >
+                                        <div class="wpd-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+                                                                                                        <div class="wpd-avatar">
+                                        <img alt='guest' src='https://secure.gravatar.com/avatar/0f270196bd196c881e1650f32c1cfde4?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/0f270196bd196c881e1650f32c1cfde4?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' loading='lazy' decoding='async'/>                                    </div>
+                                                <div id="wpd-editor-wraper-wpdiscuzuniqueid" style="display: none;">
+                <div id="wpd-editor-char-counter-wpdiscuzuniqueid"
+                     class="wpd-editor-char-counter"></div>
+                <label style="display: none;" for="wc-textarea-wpdiscuzuniqueid">Label</label>
+                <textarea id="wc-textarea-wpdiscuzuniqueid" name="wc_comment"
+                          class="wc_comment wpd-field"></textarea>
+                <div id="wpd-editor-wpdiscuzuniqueid"></div>
+                        <div id="wpd-editor-toolbar-wpdiscuzuniqueid">
+                            <button title="Жирный"
+                        class="ql-bold"  ></button>
+                                <button title="Курсив"
+                        class="ql-italic"  ></button>
+                                <button title="Подчеркивание"
+                        class="ql-underline"  ></button>
+                                <button title="Зачеркивание"
+                        class="ql-strike"  ></button>
+                                <button title="Упорядоченный список"
+                        class="ql-list" value='ordered' ></button>
+                                <button title="Неупорядоченный список"
+                        class="ql-list" value='bullet' ></button>
+                                <button title="Цитата"
+                        class="ql-blockquote"  ></button>
+                                <button title="Блок кода"
+                        class="ql-code-block"  ></button>
+                                <button title="Ссылка"
+                        class="ql-link"  ></button>
+                                <button title="Исходный код"
+                        class="ql-sourcecode"  data-wpde_button_name='sourcecode'>{}</button>
+                                <button title="Спойлер"
+                        class="ql-spoiler"  data-wpde_button_name='spoiler'>[+]</button>
+                            <div class="wpd-editor-buttons-right">
+                <span class='wmu-upload-wrap' wpd-tooltip='Прикрепить изображение к этому комментарию' wpd-tooltip-position='left'><label class='wmu-add'><i class='far fa-image'></i><input style='display:none;' class='wmu-add-files' type='file' name='wmu_files[]'  accept='image/*'/></label></span>            </div>
+        </div>
+                    </div>
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="wpd-form-foot" style='display:none;'>
+                        <div class="wpdiscuz-textarea-foot">
+                                                        <div class="wpdiscuz-button-actions"><div class='wmu-action-wrap'><div class='wmu-tabs wmu-images-tab wmu-hide'></div></div></div>
+                        </div>
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                                class="fas fa-user"></i>
+                    </div>
+                                    <input id="wc_name-wpdiscuzuniqueid" value="" required='required' aria-required='true'                       class="wc_name wpd-field" type="text"
+                       name="wc_name"
+                       placeholder="Имя*"
+                       maxlength="50" pattern='.{3,50}'                       title="">
+                <label for="wc_name-wpdiscuzuniqueid"
+                       class="wpdlb">Имя*</label>
+                            </div>
+                        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                                class="fas fa-at"></i>
+                    </div>
+                                    <input id="wc_email-wpdiscuzuniqueid" value="" required='required' aria-required='true'                       class="wc_email wpd-field" type="email"
+                       name="wc_email"
+                       placeholder="Email*"/>
+                <label for="wc_email-wpdiscuzuniqueid"
+                       class="wpdlb">Email*</label>
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                        <div class="wpd-field-captcha wpdiscuz-item">
+                <div class="wpdiscuz-recaptcha" id='wpdiscuz-recaptcha-wpdiscuzuniqueid'></div>
+                <input id='wpdiscuz-recaptcha-field-wpdiscuzuniqueid' type='hidden' name='wc_captcha'
+                       value="" required="required" aria-required='true' class="wpdiscuz_reset"/>
+                <div class="clearfix"></div>
+            </div>
+                    <div class="wc-field-submit">
+                                                                                    <label class="wpd_label"
+                               wpd-tooltip="Сообщать о всех новых ответах на мои комментарии">
+                            <input id="wc_notification_new_comment-wpdiscuzuniqueid"
+                                   class="wc_notification_new_comment-wpdiscuzuniqueid wpd_label__checkbox"
+                                   value="comment" type="checkbox"
+                                   name="wpdiscuz_notification_type" checked='checked'/>
+                            <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                        </label>
+                                                                <input id="wpd-field-submit-wpdiscuzuniqueid"
+                   class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit"
+                   name="submit" value="Оставить комментарий"
+                   aria-label="Оставить комментарий"/>
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                                        <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid"
+                           name="wpdiscuz_unique_id">
+                                    </form>
+                        </div>
+                </div>
+                    </div>
+                        <div id="wpd-threads" class="wpd-thread-wrapper">
+                <div class="wpd-thread-head">
+                    <div class="wpd-thread-info "
+                         data-comments-count="2">
+                        <span class='wpdtc' title='2'>2</span> комментариев                    </div>
+                                        <div class="wpd-space"></div>
+                    <div class="wpd-thread-filter">
+                                                    <div class="wpd-filter wpdf-reacted wpd_not_clicked "
+                                 wpd-tooltip="Самый популярный комментарий ">
+                                <i class="fas fa-bolt"></i></div>
+                                                        <div class="wpd-filter wpdf-hottest wpd_not_clicked "
+                                 wpd-tooltip="Цепочка популярного комментария">
+                                <i class="fas fa-fire"></i></div>
+                                                        <div class="wpd-filter wpdf-sorting ">
+                                                                        <span class="wpdiscuz-sort-button wpdiscuz-vote-sort-up wpdiscuz-sort-button-active"
+                                              data-sorting="by_vote">Популярные</span>
+                                                                        <i class="fas fa-sort-down"></i>
+                                <div class="wpdiscuz-sort-buttons">
+                                                                            <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc"
+                                              data-sorting="newest">Новые</span>
+                                                                                <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc"
+                                              data-sorting="oldest">Старые</span>
+                                                                        </div>
+                            </div>
+                                                </div>
+                </div>
+                <div class="wpd-comment-info-bar">
+                    <div class="wpd-current-view"><i
+                                class="fas fa-quote-left"></i> Межтекстовые Отзывы                     </div>
+                    <div class="wpd-filter-view-all">Посмотреть все комментарии</div>
+                </div>
+                                <div class="wpd-thread-list">
+                    <div id='wpd-comm-35_0' class='comment even thread-even depth-1 wpd-comment wpd_comment_level-1'><div class="wpd-comment-wrap wpd-blog-guest">
+    <div class="wpd-comment-left ">
+    <div class="wpd-avatar ">
+    <img alt='abra' src='https://secure.gravatar.com/avatar/ce499a20f6641e977ab5a05ef0d91a4d?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ce499a20f6641e977ab5a05ef0d91a4d?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' loading='lazy' decoding='async'/>
+</div>
+    
+    
+</div>
+    <div id="comment-35" class="wpd-comment-right">
+    <div class="wpd-comment-header">
+    <div class="wpd-comment-author ">
+    abra
+</div>
+    <div class="wpd-comment-date" title="9 августа, 2019 8:30 пп">
+    <i class='far fa-clock' aria-hidden='true'></i>
+    6 лет назад
+</div>
+    
+    <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+    <i class='fas fa-share-alt' aria-hidden='true'></i>
+    <div class="wpd-tooltip-content">
+        <a class='wc_tw' rel='noreferrer' target='_blank' href='https://twitter.com/intent/tweet?text=&#171;тест-дизайнер придумает, как за 10 тестов пров... &url=https%3A%2F%2Fquality-lab.ru%2Fblog%2Froles-and-responsibilities-of-test-designer%2F%23comment-35' title='Share On X'><i class='fab fa-twitter wpf-cta' aria-hidden='true'></i></a><a class='wc_whatsapp' rel='noreferrer' href='https://web.whatsapp.com/send?text=%26%23171%3B%D1%82%D0%B5%D1%81%D1%82-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80+%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D0%B5%D1%82%2C+%D0%BA%D0%B0%D0%BA+%D0%B7%D0%B0+10+%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C+1000+%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%21%26%23187%3B%0A%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80+%D1%82%D0%B0%D0%BA%D0%BE%D0%B9+%D0%B1%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%B4...+ URL: https%3A%2F%2Fquality-lab.ru%2Fblog%2Froles-and-responsibilities-of-test-designer%2F%23comment-35' target='_blank' title='Поделиться в WhatsApp'><i class='fab fa-whatsapp wpf-cta' aria-hidden='true'></i></a><a class='wc_vk' rel='noreferrer' target='_blank' href='https://vk.com/share.php?url=https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/' title='Поделиться через Вконтакте'><i class='fab fa-vk wpf-cta' aria-hidden='true'></i></a><a class='wc_ok' rel='noreferrer' target='_blank' href='https://connect.ok.ru/offer?url=https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/' title='Поделиться через Одноклассники'><i class='fab fa-odnoklassniki wpf-cta' aria-hidden='true'></i></a>
+    </div>
+</div>
+    <div class="wpd-space"></div>
+    <div class="wpd-comment-link wpd-hidden">
+    <span wpd-tooltip='Ссылка на комментарий' wpd-tooltip-position='left'><i class='fas fa-link' aria-hidden='true' data-wpd-clipboard='https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/#comment-35'></i></span>
+</div>
+</div>
+    
+    <div class="wpd-comment-text">
+    <p>&#171;тест-дизайнер придумает, как за 10 тестов проверить 1000 значений!&#187;<br />
+Пример такой белиберды в студию, плиз!<br />
+И неужели тест-дезигнер развалится хотя бы от написания автотестов? Мыслить-то надо во всех направлениях!</p>
+
+</div>
+    <div class="wpd-comment-footer">
+    <div class="wpd-vote">
+    <div class="wpd-vote-up wpd_not_clicked">
+        <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' d='M0 0h24v24H0V0z'/><path d='M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z'/></svg>
+    </div>
+    <div class='wpd-vote-result' title='0'>0</div>
+    <div class="wpd-vote-down wpd_not_clicked">
+        <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' d='M0 0h24v24H0z'/><path d='M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z'/></svg>
+    </div>
+</div>
+    <div class="wpd-reply-button">
+    <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z'/><path d='M0 0h24v24H0z' fill='none'/></svg>
+    <span>Ответить</span>
+</div>
+    <div class="wpd-space"></div>
+    
+    <div class="wpd-toggle wpd-hidden wpd_not_clicked" wpd-tooltip="Спрятать ответы" wpd-tooltip-position='left'>
+    <i class='fas fa-chevron-up'></i>
+</div>
+</div>
+</div>
+</div><div id='wpdiscuz_form_anchor-35_0'></div><div id='wpd-comm-47_35' class='comment odd alt depth-2 wpd-comment wpd-reply wpd_comment_level-2'><div class="wpd-comment-wrap wpd-blog-guest">
+    <div class="wpd-comment-left ">
+    <div class="wpd-avatar ">
+    <img alt='Р' src='https://secure.gravatar.com/avatar/a796cff49393dca1390f28b752666bd9?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a796cff49393dca1390f28b752666bd9?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' loading='lazy' decoding='async'/>
+</div>
+    
+    
+</div>
+    <div id="comment-47" class="wpd-comment-right">
+    <div class="wpd-comment-header">
+    <div class="wpd-comment-author ">
+    Р
+</div>
+    <div class="wpd-comment-date" title="23 февраля, 2020 7:49 пп">
+    <i class='far fa-clock' aria-hidden='true'></i>
+    5 лет назад
+</div>
+    
+    <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+    <i class='fas fa-share-alt' aria-hidden='true'></i>
+    <div class="wpd-tooltip-content">
+        <a class='wc_tw' rel='noreferrer' target='_blank' href='https://twitter.com/intent/tweet?text=прочитай про эквивалентные значения еще раз
+&url=https%3A%2F%2Fquality-lab.ru%2Fblog%2Froles-and-responsibilities-of-test-designer%2F%23comment-47' title='Share On X'><i class='fab fa-twitter wpf-cta' aria-hidden='true'></i></a><a class='wc_whatsapp' rel='noreferrer' href='https://web.whatsapp.com/send?text=%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%B9+%D0%BF%D1%80%D0%BE+%D1%8D%D0%BA%D0%B2%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B5+%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F+%D0%B5%D1%89%D0%B5+%D1%80%D0%B0%D0%B7%0A URL: https%3A%2F%2Fquality-lab.ru%2Fblog%2Froles-and-responsibilities-of-test-designer%2F%23comment-47' target='_blank' title='Поделиться в WhatsApp'><i class='fab fa-whatsapp wpf-cta' aria-hidden='true'></i></a><a class='wc_vk' rel='noreferrer' target='_blank' href='https://vk.com/share.php?url=https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/' title='Поделиться через Вконтакте'><i class='fab fa-vk wpf-cta' aria-hidden='true'></i></a><a class='wc_ok' rel='noreferrer' target='_blank' href='https://connect.ok.ru/offer?url=https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/' title='Поделиться через Одноклассники'><i class='fab fa-odnoklassniki wpf-cta' aria-hidden='true'></i></a>
+    </div>
+</div>
+    <div class="wpd-space"></div>
+    <div class="wpd-comment-link wpd-hidden">
+    <span wpd-tooltip='Ссылка на комментарий' wpd-tooltip-position='left'><i class='fas fa-link' aria-hidden='true' data-wpd-clipboard='https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer/#comment-47'></i></span>
+</div>
+</div>
+    <div class="wpd-reply-to">
+    <i class='far fa-comments'></i>
+    Ответить на&nbsp;
+    <a href="#comment-35">
+        abra
+    </a>
+</div>
+    <div class="wpd-comment-text">
+    <p>прочитай про эквивалентные значения еще раз</p>
+
+</div>
+    <div class="wpd-comment-footer">
+    <div class="wpd-vote">
+    <div class="wpd-vote-up wpd_not_clicked">
+        <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' d='M0 0h24v24H0V0z'/><path d='M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z'/></svg>
+    </div>
+    <div class='wpd-vote-result wpd-up' title='2'>2</div>
+    <div class="wpd-vote-down wpd_not_clicked">
+        <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' d='M0 0h24v24H0z'/><path d='M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z'/></svg>
+    </div>
+</div>
+    <div class="wpd-reply-button">
+    <svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z'/><path d='M0 0h24v24H0z' fill='none'/></svg>
+    <span>Ответить</span>
+</div>
+    <div class="wpd-space"></div>
+    
+    
+</div>
+</div>
+</div><div id='wpdiscuz_form_anchor-47_35'></div></div></div><!-- // From wpDiscuz's Caches // -->                    <div class="wpdiscuz-comment-pagination">
+                                            </div>
+                </div>
+            </div>
+                </div>
+        </div>
+    <div id="wpdiscuz-loading-bar"
+         class="wpdiscuz-loading-bar-unauth"></div>
+    <div id="wpdiscuz-comment-message"
+         class="wpdiscuz-comment-message-unauth"></div>
+    
+          
+        
+      </div>
+      <div class="col-sm-12 col-lg-4 mt-3">
+        <div class="ql-widget-box ql-bg-yellow mb-3">
+          <div class="ql-widget-box-top"></div>
+          <div class="ql-widget-box-left"></div>
+          <div class="ql-widget-box-right"></div>
+          <div class="ql-widget-box-bottom"></div>
+          <div class="h3 ql-font-special">Об авторе</div>
+          <div class="ql-line-black"></div>
+          <div class="ql-author clearfix mt-3">
+            <img src="/wp-content/uploads/2017/02/Алексеев.jpeg" width="100px" height="100px" scale="0"
+     alt="author">
+  <p style="margin-bottom: 8px;font-size: 1.5rem;display: inline-block;font-family: 'NeuchaRegular', sans-serif !important;">
+    <a href="https://quality-lab.ru/author/antonius/" title="Записи Антон Алексеев" rel="author">Антон Алексеев</a>  </p>
+  
+<p>В практическом тестировании с 2013 года. Все эти годы неразрывно связан с «Лабораторией Качества», задействован на различных проектах, начиная с простых с применением ручного тестирования, заканчивая сложными с использованием тест-анализа, работой с базами данных и т. д.</p>
+          </div>
+        </div>
+        <div class="ql-widget-box ql-bg-green mb-3">
+          <div class="ql-widget-box-top"></div>
+          <div class="ql-widget-box-left"></div>
+          <div class="ql-widget-box-right"></div>
+          <div class="ql-widget-box-bottom"></div>
+          <div class="h3 ql-font-special">Поиск</div>
+          <div class="ql-line-black"></div>
+          <div class="ql-form clearfix mt-3">
+            <form role="search" method="get" id="ql-search-form" action="https://quality-lab.ru/" >
+    <label class="screen-reader-text" for="s">Поиск: </label>
+    <input type="text" class="ql-form-input ql-search-field" value="" name="s" id="s" />
+    <input type="hidden" value="1" name="cat" />
+    <input type="submit" class="ql-search-submit" value="" />
+</form>          </div>
+        </div>
+        <div class="ql-widget-box ql-bg-yellow mb-3">
+          <div class="ql-widget-box-top"></div>
+          <div class="ql-widget-box-left"></div>
+          <div class="ql-widget-box-right"></div>
+          <div class="ql-widget-box-bottom"></div>
+          <h3 class="h3 ql-font-special">Популярные статьи</h3>
+          <div class="ql-line-black"></div>
+          <div class="ql-popular clearfix mt-3">
+            
+    <div class="d-flex pb-3 pt-3 border-bottom">
+      <div class="col-5 col-md-3 col-lg-4">
+        <a class="clearfix border-0" href="https://quality-lab.ru/blog/audit-testirovaniya-kak-ponyat-chto-on-nuzhen/"><img width="300" height="253" src="https://quality-lab.ru/wp-content/uploads/2024/09/Аудит-тестирования-как-понять-что-он-нужен-300x253.png" class="attachment-medium size-medium wp-post-image" alt="Аудит тестирования: как понять, что он нужен?" title="Аудит тестирования: как понять, что он нужен?" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2024/09/Аудит-тестирования-как-понять-что-он-нужен-300x253.png 300w, https://quality-lab.ru/wp-content/uploads/2024/09/Аудит-тестирования-как-понять-что-он-нужен-1024x863.png 1024w, https://quality-lab.ru/wp-content/uploads/2024/09/Аудит-тестирования-как-понять-что-он-нужен-768x647.png 768w, https://quality-lab.ru/wp-content/uploads/2024/09/Аудит-тестирования-как-понять-что-он-нужен-1536x1294.png 1536w, https://quality-lab.ru/wp-content/uploads/2024/09/Аудит-тестирования-как-понять-что-он-нужен.png 2048w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+      </div>
+      <div class="col-7 col-md-9 col-lg-8 pl-0">
+        <div class="ql-popular-post">
+          <a class="clearfix" href="https://quality-lab.ru/blog/audit-testirovaniya-kak-ponyat-chto-on-nuzhen/">Аудит тестирования: как понять, что он нужен?</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex pb-3 pt-3 border-bottom">
+      <div class="col-5 col-md-3 col-lg-4">
+        <a class="clearfix border-0" href="https://quality-lab.ru/blog/testirovanie-na-osnove-svojstv-podxod-uskoryayushhij-reliz/"><img width="300" height="286" src="https://quality-lab.ru/wp-content/uploads/2024/10/тестир-свойств2-300x286.png" class="attachment-medium size-medium wp-post-image" alt="Тестирование на основе свойств: подход, ускоряющий релиз" title="Тестирование на основе свойств: подход, ускоряющий релиз" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2024/10/тестир-свойств2-300x286.png 300w, https://quality-lab.ru/wp-content/uploads/2024/10/тестир-свойств2.png 600w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+      </div>
+      <div class="col-7 col-md-9 col-lg-8 pl-0">
+        <div class="ql-popular-post">
+          <a class="clearfix" href="https://quality-lab.ru/blog/testirovanie-na-osnove-svojstv-podxod-uskoryayushhij-reliz/">Тестирование на основе свойств: подход, ускоряющий релиз</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex pb-3 pt-3 border-bottom">
+      <div class="col-5 col-md-3 col-lg-4">
+        <a class="clearfix border-0" href="https://quality-lab.ru/blog/gde-brat-testirovshhikov-principy-poiska-i-nabora/"><img width="300" height="281" src="https://quality-lab.ru/wp-content/uploads/2023/10/1-1-300x281.png" class="attachment-medium size-medium wp-post-image" alt="Где брать тестировщиков? Принципы поиска и набора" title="Где брать тестировщиков? Принципы поиска и набора" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2023/10/1-1-300x281.png 300w, https://quality-lab.ru/wp-content/uploads/2023/10/1-1-1024x959.png 1024w, https://quality-lab.ru/wp-content/uploads/2023/10/1-1-768x719.png 768w, https://quality-lab.ru/wp-content/uploads/2023/10/1-1-1536x1439.png 1536w, https://quality-lab.ru/wp-content/uploads/2023/10/1-1-2048x1919.png 2048w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+      </div>
+      <div class="col-7 col-md-9 col-lg-8 pl-0">
+        <div class="ql-popular-post">
+          <a class="clearfix" href="https://quality-lab.ru/blog/gde-brat-testirovshhikov-principy-poiska-i-nabora/">Где брать тестировщиков? Принципы поиска и набора</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex pb-3 pt-3 border-bottom">
+      <div class="col-5 col-md-3 col-lg-4">
+        <a class="clearfix border-0" href="https://quality-lab.ru/blog/kak-legko-i-prosto-perejti-na-otechestvennuyu-bazu-znanij-podrobnyj-chek-list-na-primere-confluence-i-inknowledge/"><img width="300" height="225" src="https://quality-lab.ru/wp-content/uploads/2023/03/1-300x225.png" class="attachment-medium size-medium wp-post-image" alt="Как легко и просто перейти на отечественную базу знаний" title="Как легко и просто перейти на отечественную базу знаний" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2023/03/1-300x225.png 300w, https://quality-lab.ru/wp-content/uploads/2023/03/1-1024x768.png 1024w, https://quality-lab.ru/wp-content/uploads/2023/03/1-768x576.png 768w, https://quality-lab.ru/wp-content/uploads/2023/03/1.png 1440w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+      </div>
+      <div class="col-7 col-md-9 col-lg-8 pl-0">
+        <div class="ql-popular-post">
+          <a class="clearfix" href="https://quality-lab.ru/blog/kak-legko-i-prosto-perejti-na-otechestvennuyu-bazu-znanij-podrobnyj-chek-list-na-primere-confluence-i-inknowledge/">Как легко и просто перейти на отечественную базу знаний</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex pb-3 pt-3 border-bottom">
+      <div class="col-5 col-md-3 col-lg-4">
+        <a class="clearfix border-0" href="https://quality-lab.ru/blog/tri-avstralijskix-kejsa-i-plan-po-zaxvatu-mira-mezhdunarodnye-proekty-laboratorii-kachestva/"><img width="300" height="300" src="https://quality-lab.ru/wp-content/uploads/2017/12/191217_9-300x300.png" class="attachment-medium size-medium wp-post-image" alt="Три австралийских кейса и план по захвату мира &#8212; Международные проекты «Лаборатории качества»" title="Три австралийских кейса и план по захвату мира &#8212; Международные проекты «Лаборатории качества»" decoding="async" loading="lazy" srcset="https://quality-lab.ru/wp-content/uploads/2017/12/191217_9-300x300.png 300w, https://quality-lab.ru/wp-content/uploads/2017/12/191217_9-150x150.png 150w, https://quality-lab.ru/wp-content/uploads/2017/12/191217_9.png 600w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+      </div>
+      <div class="col-7 col-md-9 col-lg-8 pl-0">
+        <div class="ql-popular-post">
+          <a class="clearfix" href="https://quality-lab.ru/blog/tri-avstralijskix-kejsa-i-plan-po-zaxvatu-mira-mezhdunarodnye-proekty-laboratorii-kachestva/">Три австралийских кейса и план по захвату мира &#8212; Международные проекты «Лаборатории качества»</a>
+        </div>
+      </div>
+    </div>
+
+          </div>
+        </div>
+        <div class="ql-widget-box ql-bg-orange">
+          <div class="ql-widget-box-top"></div>
+          <div class="ql-widget-box-left"></div>
+          <div class="ql-widget-box-right"></div>
+          <div class="ql-widget-box-bottom"></div>
+          <div class="h3 ql-font-special">Получите совет</div>
+          <div class="ql-line-black"></div>
+          <div class="ql-popular clearfix mt-3">
+            
+<div class="wpcf7 no-js" id="wpcf7-f105-o4" lang="ru-RU" dir="ltr" data-wpcf7-id="105">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f105-o4" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="105" />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f105-o4" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" />
+<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number d-none" aria-invalid="false" value="" type="number" name="sp-email" /></span>
+</p>
+<p class="wpcf7-list-item-label alert alert-primary" role="alert">Вы можете задать вопрос эксперту и владельцу компании
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Эл. почта*" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required ql-form-textarea mt-4" aria-required="true" aria-invalid="false" placeholder="Вопрос" name="your-message"></textarea></span>
+</p>
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button ql-button-mask mt-3" type="submit" value="Отправить" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- #content -->
+
+<footer id="colophon" class="site-footer ql-footer mt-5">
+  <div class="ql-footer-mask"></div>
+  <div style="background: #65a5c0; overflow: hidden;">
+    <div class="container mt-3">
+      <ul class="nav ql-nav ql-nav-borders justify-content-around ml-0">
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/outsourcing/">Аутсорсинг</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/consulting/">Консалтинг</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/education/">Обучение</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/our-clients/">Наши клиенты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/blog/">Блог</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/contacts/">Контакты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://quality-lab.ru/about/">О компании</a>
+        </li>
+      </ul>
+      <ul class="nav ql-nav ql-nav-borders justify-content-around ml-0 mb-3">
+        <li class="nav-item text-center d-contents">
+          <a class="nav-link" href="https://quality-lab.ru/legal/">Сведения об образовательной организации</a>
+        </li>
+      </ul>
+      <ul class="nav ql-nav ql-nav-borders justify-content-around ml-0 mb-3">
+        <li class="nav-item text-center d-contents">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#subscribeNews"><i class="fa fa-envelope-open mr-1" aria-hidden="true"></i>Подпишитесь на рассылку. Тренды и фишки из мира IT, экспертные статьи и всё о тестировании.</a>
+        </li>
+      </ul>
+
+      <ul class="nav ql-nav ql-nav-borders justify-content-center ml-0 gap-1">
+        <li class="nav-item text-center d-contents">
+          <a class="nav-link" href="https://quality-lab.ru/docs/privacy-policy.pdf">Политика обработки персональных данных</a>
+        </li>
+        <li class="nav-item text-center d-contents">
+          <a class="nav-link" href="https://quality-lab.ru/docs/privacy-policy-1.pdf">Согласие на обработку персональных данных</a>
+        </li>
+      </ul>
+
+
+      <div class="social-urls">
+        <a href="https://vk.me/quality_lab_ru" target="_blank"><img
+            src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/icons/vk.png" alt="vk-logo"
+            style="width: 40px;"></a>
+        <a href="https://www.linkedin.com/company/qualitylabru" target="_blank"><img
+            src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/icons/linkedin.png" alt="linkedin-logo"
+            style="width: 40px;"></a>
+        <a href="https://t.me/Quality_Lab_bot?start=officialsitelk" target="_blank"><img
+            src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/icons/telegram.png" alt="telegram-logo"
+            style="width: 40px;"></a>
+        <a href="https://vc.ru/id1894539" target="_blank"><img
+            src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/icons/vc.png" alt="vc-logo"
+            style="width: 40px;"></a>
+        <a href="https://tenchat.ru/QualityLab" target="_blank"><img
+            src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/icons/tenchat.png" alt="tenchat-logo"
+            style="width: 40px;"></a>
+      </div>
+    </div>
+    <div class="container text-center mt-3 mb-3" style="color: #fff;">
+      Лаборатория качества
+    </div>
+    <div class="container text-center mt-3 mb-3" style="color: #fff;">
+      © 2010—2025 г.
+    </div>
+  </div>
+
+  
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript"> (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+          try {
+            w.yaCounter44475886 = new Ya.Metrika({
+              id: 44475886,
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true
+            });
+          } catch (e) {
+          }
+        });
+        var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+          n.parentNode.insertBefore(s, n);
+        };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+          f();
+        }
+      })(document, window, "yandex_metrika_callbacks");
+    </script>
+
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/44475886" style="position:absolute; left:-9999px;" alt="yandex"/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Top.Mail.Ru counter -->
+    <script type="text/javascript">
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({id: "3605665", type: "pageView", start: (new Date()).getTime()});
+        (function (d, w, id) {
+            if (d.getElementById(id)) return;
+            var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+            ts.src = "https://top-fwz1.mail.ru/js/code.js";
+            var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+            if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+        })(document, window, "tmr-code");
+    </script>
+    <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3605665;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+    <!-- /Top.Mail.Ru counter -->
+
+  
+</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<div id="RequestModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content ql-box-modal ql-bg-form p-3">
+      <div class="modal-header">
+        <h4 class="modal-title">Заказать консультацию</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+<div class="wpcf7 no-js" id="wpcf7-f197-o5" lang="ru-RU" dir="ltr" data-wpcf7-id="197">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f197-o5" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="197" />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f197-o5" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" />
+<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number d-none" aria-invalid="false" value="" type="number" name="sp-email" /></span>
+</p>
+<p class="accept-notice wpcf7-list-item-label alert alert-info" role="alert">Пожалуйста, заполните небольшую анкету, чтобы мы могли ознакомиться с продуктом, который нуждается в тестировании
+</p>
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="E-mail*" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="5" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required ql-form-textarea mt-2" aria-required="true" aria-invalid="false" placeholder="Комментарий" name="your-message"></textarea></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask" type="submit" value="Отправить" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="discussProject" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content ql-box-modal ql-bg-form p-3">
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+<div class="wpcf7 no-js" id="wpcf7-f22482-o6" lang="ru-RU" dir="ltr" data-wpcf7-id="22482">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f22482-o6" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="22482" />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f22482-o6" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" />
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<div style="display:none;">
+	<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="sp-email" /></span>
+	</p>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="E-mail*" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="5" maxlength="2000" class="wpcf7-form-control wpcf7-textarea ql-form-textarea mt-2" aria-invalid="false" placeholder="Ссылка или описание проекта, который хотите обсудить" name="your-message"></textarea></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask" type="submit" value="Отправить" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="downloadGuide" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content ql-box-modal ql-bg-form p-3">
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                
+<div class="wpcf7 no-js" id="wpcf7-f24391-o7" lang="ru-RU" dir="ltr" data-wpcf7-id="24391">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f24391-o7" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="24391" />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f24391-o7" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<input class="wpcf7-form-control wpcf7-hidden" value="https://quality-lab.ru/blog/roles-and-responsibilities-of-test-designer" type="hidden" name="get-url" />
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Перед отправкой формы необходимо разрешить обработку ваших персональных данных и ознакомиться с политикой конфиденциальности
+</p>
+<div style="display:none;">
+	<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="sp-email" /></span>
+	</p>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="E-mail* сюда мы пришлем ссылку на гайд" value="" type="email" name="your-email" /></span><br />
+<span class="wpcf7-form-control-wrap" data-name="your-tel"><input size="40" maxlength="18" minlength="18" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel ql-form-input mt-2" aria-required="true" aria-invalid="false" placeholder="Телефон*" value="" type="tel" name="your-tel" /></span>
+</p>
+<p class="wpcf7-list-item-label">Вы можете скачать гайд в нашем <img src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/img/icons/telegram.png" alt="telegram-logo" style="width:22px; margin-right:5px" /><a href="https://t.me/Quality_Lab_bot?start=officialsitelk">телеграм-боте</a>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="subscribe"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><input type="checkbox" name="subscribe[]" value="Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений" /><span class="wpcf7-list-item-label">Согласен(-на) на получение e-mail рассылки новостей и выгодных предложений</span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask" type="submit" value="Получить гайд" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+              </div>
+    </div>
+  </div>
+</div>
+
+<div id="subscribeNews" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content ql-box-modal ql-bg-form p-3">
+      <div class="modal-header">
+        <h4 class="modal-title">Подписка на новости</h4>
+        <button type="button" class="close close-subscribe" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+<div class="wpcf7 no-js" id="wpcf7-f24612-o8" lang="ru-RU" dir="ltr" data-wpcf7-id="24612">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/blog/roles-and-responsibilities-of-test-designer/#wpcf7-f24612-o8" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="24612" />
+<input type="hidden" name="_wpcf7_version" value="6.0.6" />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f24612-o8" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<p class="accept-notice wpcf7-list-item-label alert alert-warning" role="alert">Тренды и фишки из мира IT, экспертные статьи и всё о тестировании.
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="sp-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text d-none" aria-invalid="false" value="" type="text" name="sp-email" /></span>
+</p>
+<input class="wpcf7-form-control wpcf7-hidden" value="" type="hidden" name="timestamp" />
+<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required ql-form-input" aria-required="true" aria-invalid="false" placeholder="Имя*" value="" type="text" name="your-name" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email ql-form-input" aria-required="true" aria-invalid="false" placeholder="Email*" value="" type="email" name="your-email" /></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="acceptance-213"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-213" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Согласен(-на) на <a href="/docs/privacy-policy-1.pdf" target="_blank">обработку персональных данных</a></span></label></span></span></span>
+</p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Ознакомлен(-на) с <a href="/docs/privacy-policy.pdf" target="_blank">политикой обработки персональных данных</a></span></label></span></span></span>
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner ql-form-button-orange ql-button-mask mt-3" type="submit" value="Подписаться" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id='wpd-editor-source-code-wrapper-bg'></div><div id='wpd-editor-source-code-wrapper'><textarea id='wpd-editor-source-code'></textarea><button id='wpd-insert-source-code'>Insert</button><input type='hidden' id='wpd-editor-uid' /></div><script type="text/javascript" src="https://quality-lab.ru/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.0.6" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-translations">
+/* <![CDATA[ */
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2025-05-08 07:00:39+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);","lang":"ru"},"This contact form is placed in the wrong place.":["\u042d\u0442\u0430 \u043a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0449\u0435\u043d\u0430 \u0432 \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u043c \u043c\u0435\u0441\u0442\u0435."],"Error:":["\u041e\u0448\u0438\u0431\u043a\u0430:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+/* ]]> */
+</script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/quality-lab.ru\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.0.6" id="contact-form-7-js"></script>
+<script type="text/javascript" id="wpdiscuz-combo-js-js-extra">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"wc_hide_replies_text":"\u0421\u043f\u0440\u044f\u0442\u0430\u0442\u044c \u043e\u0442\u0432\u0435\u0442\u044b","wc_show_replies_text":"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 \u043e\u0442\u0432\u0435\u0442\u043e\u0432","wc_msg_required_fields":"\u0417\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u044b\u0435 \u043f\u043e\u043b\u044f","wc_invalid_field":"\u041d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043f\u043e\u043b\u044f \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u044b \u043d\u0435\u0432\u0435\u0440\u043d\u043e","wc_error_empty_text":"\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435 \u044d\u0442\u043e \u043f\u043e\u043b\u0435, \u0447\u0442\u043e\u0431\u044b \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c","wc_error_url_text":"url \u043d\u0435\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439","wc_error_email_text":"\u0430\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b \u043d\u0435\u0432\u0435\u0440\u0435\u043d","wc_invalid_captcha":"\u041d\u0435\u0432\u0435\u0440\u043d\u043e \u0432\u0432\u0435\u0434\u0435\u043d \u043a\u043e\u0434","wc_login_to_vote":"\u0412\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0432\u043e\u0439\u0442\u0438 , \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u043e\u0433\u043e\u043b\u043e\u0441\u043e\u0432\u0430\u0442\u044c","wc_deny_voting_from_same_ip":"\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u0433\u043e\u043b\u043e\u0441\u043e\u0432\u0430\u0442\u044c \u0437\u0430 \u044d\u0442\u043e\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439","wc_self_vote":"\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u0433\u043e\u043b\u043e\u0441\u043e\u0432\u0430\u0442\u044c \u0437\u0430 \u0441\u0432\u043e\u0439 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439","wc_vote_only_one_time":"\u0412\u044b \u0443\u0436\u0435 \u0433\u043e\u043b\u043e\u0441\u043e\u0432\u0430\u043b\u0438 \u0437\u0430 \u044d\u0442\u043e\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439","wc_voting_error":"\u041e\u0448\u0438\u0431\u043a\u0430 \u0433\u043e\u043b\u043e\u0441\u043e\u0432\u0430\u043d\u0438\u044f","wc_banned_user":"You are banned","wc_comment_edit_not_possible":"\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u044d\u0442\u043e\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435\u043b\u044c\u0437\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c","wc_comment_not_updated":"\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u043d\u0435 \u0431\u044b\u043b \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d","wc_comment_not_edited":"\u0412\u044b \u043d\u0435 \u0441\u0434\u0435\u043b\u0430\u043b\u0438 \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0439","wc_msg_input_min_length":"\u0412\u0432\u043e\u0434 \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0439","wc_msg_input_max_length":"\u0412\u0432\u043e\u0434 \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0434\u043b\u0438\u043d\u043d\u044b\u0439","wc_spoiler_title":"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u043f\u043e\u0439\u043b\u0435\u0440\u0430","wc_cannot_rate_again":"\u0412\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u0441\u043d\u043e\u0432\u0430 \u043e\u0446\u0435\u043d\u0438\u0442\u044c","wc_not_allowed_to_rate":"\u0412\u0430\u043c \u043d\u0435 \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u043e \u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0437\u0434\u0435\u0441\u044c \u043e\u0446\u0435\u043d\u043a\u0443","wc_confirm_rate_edit":"Are you sure you want to edit your rate?","wc_follow_user":"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u044d\u0442\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f","wc_unfollow_user":"\u041e\u0442\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043e\u0442 \u044d\u0442\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f","wc_follow_success":"\u0412\u044b \u043f\u043e\u0434\u043f\u0438\u0441\u0430\u043b\u0438\u0441\u044c \u043d\u0430 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438 \u044d\u0442\u043e\u0433\u043e \u0430\u0432\u0442\u043e\u0440\u0430","wc_follow_canceled":"\u0412\u044b \u043f\u0440\u0438\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u043b\u0438 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0443 \u043d\u0430 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438 \u044d\u0442\u043e\u0433\u043e \u0430\u0432\u0442\u043e\u0440\u0430.","wc_follow_email_confirm":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u0441\u0432\u043e\u0439 email \u0438 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0443.","wc_follow_email_confirm_fail":"\u041e\u0447\u0435\u043d\u044c \u0436\u0430\u043b\u044c, \u043d\u043e \u043c\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u043c \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043f\u0438\u0441\u044c\u043c\u043e \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f.","wc_follow_login_to_follow":"\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u0443\u0439\u0442\u0435\u0441\u044c \u0447\u0442\u043e\u0431\u044b \u043f\u043e\u0434\u043f\u0438\u0441\u044b\u0432\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439.","wc_follow_impossible":"\u041e\u0447\u0435\u043d\u044c \u0436\u0430\u043b\u044c, \u043d\u043e \u0432\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u044d\u0442\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f.","wc_follow_not_added":"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u043f\u043e\u0437\u0436\u0435.","is_user_logged_in":"","commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"60","liveUpdateGuests":"0","wordpressThreadCommentsDepth":"10","wordpressIsPaginate":"","commentTextMaxLength":"0","replyTextMaxLength":"0","commentTextMinLength":"3","replyTextMinLength":"3","storeCommenterData":"30","socialLoginAgreementCheckbox":"1","enableFbLogin":"0","fbUseOAuth2":"0","enableFbShare":"1","facebookAppID":"","facebookUseOAuth2":"0","enableGoogleLogin":"0","googleClientID":"","googleClientSecret":"","cookiehash":"713e407ecdbca80d716dc5332825f383","isLoadOnlyParentComments":"0","scrollToComment":"1","commentFormView":"collapsed","enableDropAnimation":"1","isNativeAjaxEnabled":"0","enableBubble":"0","bubbleLiveUpdate":"0","bubbleHintTimeout":"45","bubbleHintHideTimeout":"10","cookieHideBubbleHint":"wpdiscuz_hide_bubble_hint","bubbleHintShowOnce":"1","bubbleHintCookieExpires":"7","bubbleShowNewCommentMessage":"0","bubbleLocation":"content_left","firstLoadWithAjax":"0","wc_copied_to_clipboard":"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d \u0432 \u0431\u0443\u0444\u0435\u0440 \u043e\u0431\u043c\u0435\u043d\u0430.","inlineFeedbackAttractionType":"disable","loadRichEditor":"1","wpDiscuzReCaptchaSK":"6Lfb77krAAAAABPivUFxgkc8ogWSzx0oqwXFyrQ3","wpDiscuzReCaptchaTheme":"light","wpDiscuzReCaptchaVersion":"2.0","wc_captcha_show_for_guest":"1","wc_captcha_show_for_members":"0","wpDiscuzIsShowOnSubscribeForm":"0","wmuEnabled":"1","wmuInput":"wmu_files","wmuMaxFileCount":"1","wmuMaxFileSize":"2097152","wmuPostMaxSize":"31457280","wmuIsLightbox":"1","wmuMimeTypes":{"jpg":"image\/jpeg","jpeg":"image\/jpeg","jpe":"image\/jpeg","png":"image\/png"},"wmuPhraseConfirmDelete":"\u0412\u044b \u0443\u0432\u0435\u0440\u0435\u043d\u044b, \u0447\u0442\u043e \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u044d\u0442\u043e \u0432\u043b\u043e\u0436\u0435\u043d\u0438\u0435?","wmuPhraseNotAllowedFile":"\u041d\u0435\u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u044b\u0439 \u0442\u0438\u043f \u0444\u0430\u0439\u043b\u0430","wmuPhraseMaxFileCount":"\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c\u044b\u0445 \u0444\u0430\u0439\u043b\u043e\u0432 1","wmuPhraseMaxFileSize":"\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c\u043e\u0433\u043e \u0444\u0430\u0439\u043b\u0430 2MB","wmuPhrasePostMaxSize":"\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f 30MB","wmuPhraseDoingUpload":"\u0418\u0434\u0435\u0442 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0430! \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435.","msgEmptyFile":"File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.","msgPostIdNotExists":"ID \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442","msgUploadingNotAllowed":"\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u0434\u043b\u044f \u044d\u0442\u043e\u0433\u043e \u043f\u043e\u0441\u0442\u0430 \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u0430","msgPermissionDenied":"\u0423 \u0432\u0430\u0441 \u043d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e \u043f\u0440\u0430\u0432 \u0434\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u044d\u0442\u043e\u0433\u043e \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f","wmuKeyImages":"images","wmuSingleImageWidth":"auto","wmuSingleImageHeight":"200","isUserRated":null,"version":"20","wc_post_id":"4142","isCookiesEnabled":"1","loadLastCommentId":"0","dataFilterCallbacks":[],"phraseFilters":[],"scrollSize":"32","is_email_field_required":"1","url":"https:\/\/quality-lab.ru\/wp-admin\/admin-ajax.php","customAjaxUrl":"https:\/\/quality-lab.ru\/wp-content\/plugins\/wpdiscuz\/utils\/ajax\/wpdiscuz-ajax.php","bubbleUpdateUrl":"https:\/\/quality-lab.ru\/wp-json\/wpdiscuz\/v1\/update","restNonce":"f678610258","is_rate_editable":"0","menu_icon":"https:\/\/quality-lab.ru\/wp-content\/plugins\/wpdiscuz\/assets\/img\/plugin-icon\/wpdiscuz-svg.svg","menu_icon_hover":"https:\/\/quality-lab.ru\/wp-content\/plugins\/wpdiscuz\/assets\/img\/plugin-icon\/wpdiscuz-svg_hover.svg"};
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"\u0412\u044b \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u044d\u0442\u043e\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439?","msgConfirmCancelSubscription":"\u0412\u044b \u0445\u043e\u0442\u0438\u0442\u0435 \u043e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u044d\u0442\u0443 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0443?","msgConfirmCancelFollow":"\u0423\u0432\u0435\u0440\u0435\u043d\u044b, \u0447\u0442\u043e \u0445\u043e\u0442\u0438\u0442\u0435 \u043e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0443?","additionalTab":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="wpdiscuz-combo-js-js-before">
+/* <![CDATA[ */
+        var wpdiscuzEditorOptions = {
+        modules: {
+        toolbar: "",
+        counter: {
+        uniqueID: "",
+        commentmaxcount : 0,
+        replymaxcount : 0,
+        commentmincount : 3,
+        replymincount : 3,
+        },
+                },
+        wc_be_the_first_text: "\u041e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043f\u0435\u0440\u0432\u044b\u0439 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439!",
+        wc_comment_join_text: "\u041f\u0440\u0438\u0441\u043e\u0435\u0434\u0438\u043d\u0438\u0442\u044c\u0441\u044f \u043a \u043e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u044e",
+        theme: 'snow',
+        debug: 'error'
+        };
+        
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-combo.min.js?ver=20" id="wpdiscuz-combo-js-js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit&amp;hl=ru&amp;ver=1.0.0" id="wpdiscuz-google-recaptcha-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/navigation.js?ver=4.0.27" id="qlofficial-navigation-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/skip-link-focus-fix.js?ver=4.0.27" id="qlofficial-skip-link-focus-fix-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-includes/js/comment-reply.min.js?ver=6.6.2" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/ql-main.js?ver=4.0.27" id="main-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/yaCounter.js?ver=4.0.27" id="yaCounter-js-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/themes/qlofficial/assets/js/widget.js?ver=4.0.27" id="widget-js-js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6Lfx3oQUAAAAAHJTtIeSAg8rQSTapvIY8aUyG5Am&amp;ver=3.0" id="google-recaptcha-js"></script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="wpcf7-recaptcha-js-before">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {
+    "sitekey": "6Lfx3oQUAAAAAHJTtIeSAg8rQSTapvIY8aUyG5Am",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://quality-lab.ru/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.0.6" id="wpcf7-recaptcha-js"></script>
+
+<div class="consultant-name d-none">Лаборатория Качества</div>
+<div class="consultant-description d-none">Здравствуйте! Мы онлайн и готовы вам помочь!</div>
+<div class="consultant-whatsapp d-none">79202240126</div>
+<div class="consultant-telegram d-none">Quality_Lab_bot?start=officialsitelk</div>
+
+</body>
+</html>

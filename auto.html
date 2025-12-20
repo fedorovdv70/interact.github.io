@@ -149,26 +149,29 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .btn-contact {
-  display: flex;
+ display: flex;
   align-items: center;
-  padding: 1rem 1.5rem;
+  justify-content: center;
+  padding: 1.2rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  min-width: 220px;
-  justify-content: center;
+  width: 100%; /* Полная ширина на мобильных */
+  max-width: 320px; /* Ограничение ширины на десктопе */
+  min-height: 60px; /* Одинаковая высота */
+  text-align: center;
 }
 
 .btn-contact:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .whatsapp {
@@ -197,9 +200,11 @@
 }
 
 @media (max-width: 768px) {
-  .phone-number {
-    color: var(--text) !important;
-    -webkit-text-fill-color: var(--text) !important;
+  .btn-contact {
+    width: 100%;
+    max-width: none;
+    min-height: 60px;
+    font-size: 1rem;
   }
 }
     .hero-buttons {

@@ -202,6 +202,20 @@
     -webkit-text-fill-color: var(--text) !important;
   }
 }
+    .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Расстояние между кнопками */
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column; /* Кнопки в столбик на мобильных */
+    gap: 1rem; /* Вертикальное расстояние между кнопками */
+  }
+}
   </style>
 </head>
 <body>
@@ -210,10 +224,10 @@
     <div class="hero-content">
       <h1>DriveRent</h1>
       <p class="subtitle">Прокат автомобилей, мотоциклов, квадроциклов, багги</p>
-      <div>
-        <a href="#fleet" class="btn btn-primary">Выбрать технику</a>
-        <a href="#contacts" class="btn btn-outline">Забронировать</a>
-      </div>
+      <div class="hero-buttons">
+  <a href="#fleet" class="btn btn-primary">Выбрать технику</a>
+  <a href="#contacts" class="btn btn-outline">Забронировать</a>
+</div>
     </div>
   </header>
 

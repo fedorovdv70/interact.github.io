@@ -13,18 +13,13 @@
       --bg: #0e0e0e;
       --text: #f0f0f0;
       --text-muted: #b0b0b0;
-      --accent: #c9a96e;       /* золотисто-янтарный */
+      --accent: #c9a96e;
       --accent-dark: #a67c00;
       --card-bg: #151515;
       --border: #2a2a2a;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
@@ -32,17 +27,9 @@
       line-height: 1.8;
     }
 
-    h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.5px; }
+    .accent { color: var(--accent); }
 
-    .accent {
-      color: var(--accent);
-    }
-
-    /* Hero */
     header {
       height: 100vh;
       min-height: 700px;
@@ -57,21 +44,9 @@
       padding: 0 20px;
     }
 
-    .hero-content {
-      max-width: 1000px;
-    }
-
-    h1 {
-      font-size: 5.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .subtitle {
-      font-size: 1.7rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      margin-bottom: 3rem;
-    }
+    .hero-content { max-width: 1000px; }
+    h1 { font-size: 5.2rem; margin-bottom: 1rem; }
+    .subtitle { font-size: 1.7rem; font-weight: 300; color: var(--text-muted); margin-bottom: 3rem; }
 
     .btn {
       display: inline-block;
@@ -84,7 +59,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .btn::before {
       content: '';
       position: absolute;
@@ -93,46 +67,14 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
       transition: 0.7s;
     }
+    .btn:hover::before { left: 100%; }
+    .btn-primary { background: var(--accent); color: #111; }
+    .btn-primary:hover { background: var(--accent-dark); color: #fff; }
+    .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #111; }
 
-    .btn:hover::before {
-      left: 100%;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #111;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dark);
-      color: #fff;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-
-    .btn-outline:hover {
-      background: var(--accent);
-      color: #111;
-    }
-
-    /* Sections */
-    section {
-      padding: 160px 20px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      font-size: 4rem;
-      text-align: center;
-      margin-bottom: 4rem;
-      position: relative;
-    }
-
+    section { padding: 140px 20px; max-width: 1400px; margin: 0 auto; }
+    h2 { font-size: 4rem; text-align: center; margin-bottom: 4rem; position: relative; }
     h2::after {
       content: '';
       width: 80px;
@@ -144,94 +86,43 @@
       transform: translateX(-50%);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 3rem;
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2.5rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .gallery-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: transform 0.4s ease;
     }
+    .gallery-grid img:hover { transform: scale(1.05); }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       padding: 2.5rem;
-      border-radius: 0;
       transition: all 0.4s ease;
     }
+    .card:hover { border-color: var(--accent); transform: translateY(-8px); }
+    .card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; }
 
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-8px);
-    }
+    .price-card { text-align: center; background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem; }
+    .price-card img { width: 100%; height: 320px; object-fit: cover; margin-bottom: 1.5rem; }
+    .price { font-size: 3rem; font-weight: 700; color: var(--accent); margin: 1.5rem 0; }
 
-    .card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    /* Pricing */
-    .price-card {
-      text-align: center;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 3rem 2rem;
-    }
-
-    .price-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      margin-bottom: 2rem;
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 1.5rem 0;
-    }
-
-    /* Testimonials */
     .testimonial {
       background: var(--card-bg);
-      padding: 3rem 2.5rem;
+      padding: 2.5rem;
       border-left: 4px solid var(--accent);
       font-style: italic;
     }
+    .author { margin-top: 1.5rem; font-style: normal; font-weight: 600; color: var(--accent); text-align: right; }
 
-    .author {
-      margin-top: 2rem;
-      font-style: normal;
-      font-weight: 600;
-      color: var(--accent);
-      text-align: right;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 2rem 0; }
+    .faq-question { font-size: 1.3rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer { margin-top: 1.2rem; color: var(--text-muted); display: none; }
+    .faq-answer.show { display: block; }
 
-    /* FAQ */
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 0;
-    }
-
-    .faq-question {
-      font-size: 1.3rem;
-      font-weight: 500;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-answer {
-      margin-top: 1.2rem;
-      color: var(--text-muted);
-      display: none;
-    }
-
-    .faq-answer.show {
-      display: block;
-    }
-
-    /* Footer */
     footer {
       background: #0a0a0a;
       padding: 6rem 20px 4rem;
@@ -242,7 +133,7 @@
     @media (max-width: 768px) {
       h1 { font-size: 3.8rem; }
       h2 { font-size: 3rem; }
-      .btn { padding: 1rem 2.5rem; font-size: 1.1rem; }
+      .grid, .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -260,7 +151,7 @@
     </div>
   </header>
 
-  <!-- Почему мы -->
+  <!-- Почему мы + фото -->
   <section id="about">
     <h2>Почему Le Bois Privé</h2>
     <div class="grid">
@@ -277,9 +168,14 @@
         <p>Круглосуточная консьерж-служба, доставка продуктов, индивидуальные пожелания.</p>
       </div>
     </div>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Уединённый домик в лесу">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Интерьер домика">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Лес вокруг">
+    </div>
   </section>
 
-  <!-- Преимущества -->
+  <!-- Преимущества + больше фото -->
   <section style="background: #111;">
     <h2>Особенности домиков</h2>
     <div class="grid">
@@ -288,21 +184,27 @@
       <div class="card"><h3>Просторные террасы</h3><p>От 30 до 50 м² с дизайнерской мебелью и зоной барбекю.</p></div>
       <div class="card"><h3>Полная автономия</h3><p>Кухня премиум-класса, стиральная машина, камин, Wi-Fi.</p></div>
     </div>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Панорамные окна">
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Сауна и купель">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Терраса с мангалом">
+      <img src="https://images.unsplash.com/photo-1556911220-e15b0f1e0a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Кухня в домике">
+    </div>
   </section>
 
-  <!-- Цены -->
+  <!-- Цены + фото домиков -->
   <section id="pricing">
     <h2>Тарифы</h2>
     <div class="grid">
       <div class="price-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Классик">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Signature">
         <h3>Signature</h3>
         <div class="price">22 000 ₽ / сутки</div>
         <p>2–4 гостя • 2 спальни • сауна • терраса 30 м²</p>
         <a href="#booking" class="btn btn-primary" style="margin-top:2rem; width:100%;">Выбрать даты</a>
       </div>
       <div class="price-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Премиум">
+        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reserve">
         <h3>Reserve</h3>
         <div class="price">34 000 ₽ / сутки</div>
         <p>4–6 гостей • 3 спальни • джакузи • камин • терраса 45 м²</p>
@@ -351,9 +253,14 @@
     </div>
   </section>
 
-  <!-- Бронирование -->
+  <!-- Бронирование + фото -->
   <section id="booking" style="background: #0a0a0a;">
     <h2>Забронировать домик</h2>
+    <div class="gallery-grid" style="margin-bottom: 4rem;">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Вид из окна">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Спальня">
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Купель на террасе">
+    </div>
     <form style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
       <input type="text" placeholder="Имя" required style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
       <input type="tel" placeholder="Телефон" required style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
@@ -382,7 +289,6 @@
     </p>
   </footer>
 
-  <!-- JS для FAQ -->
   <script>
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {

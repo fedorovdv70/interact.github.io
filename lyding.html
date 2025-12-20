@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лесные Домики</title>
+    <style>
+        :root {
+            --green: #2e7d32;
+            --beige: #f5e6d3;
+            --brown: #5d4037;
+            --light: #fff8e1;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f9f7f2;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=1600') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+        }
+        .subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .btn:hover { background: #1b5e20; transform: translateY(-5px); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: var(--brown);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: 0.4s;
+        }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .card img { width: 100%; height: 240px; object-fit: cover; }
+        .card-body {
+            padding: 25px;
+        }
+        .price {
+            font-size: 2rem;
+            color: var(--green);
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .features li:before {
+            content: "✓ ";
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.05); }
+
+        .contacts {
+            background: var(--brown);
+            color: white;
+            text-align: center;
+        }
+        .contacts h2 { color: #fff; }
+        .phone {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #ffca28;
+        }
+        footer {
+            background: #212121;
+            color: #aaa;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero">
+        <h1>Лесные Домики</h1>
+        <p class="subtitle">Добро подаловать в аппартаменты "Лесные Домики". Уютные дома в окружении леса и озера<br>Идеальное место для отдыха с семьёй и друзьями</p>
+        <a href="tel:+79991234567" class="btn">Позвонить и забронировать</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <section id="houses">
+        <h2>Наши домики</h2>
+        <div class="grid">
+            <!-- Домик 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1576941089067-7dc7e74f80b2?w=800" alt="Домик Берёза">
+                <div class="card-body">
+                    <h3>Домик «Берёза»</h3>
+                    <div class="price">8 000 ₽ / сутки</div>
+                    <ul class="features">
+                        <li>До 6 гостей</li>
+                        <li>2 спальни + диван в гостиной</li>
+                        <li>Баня на дровах</li>
+                        <li>Мангал, казан, беседка</li>
+                        <li>Wi-Fi, Smart TV</li>
+                        <li>Лодка и сап-борд в подарок</li>
+                    </ul>
+                    <a href="tel:+7777-77-77" class="btn" style="width:100%;margin-top:15px;">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- Домик 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Домик Сосна">
+                <div class="card-body">
+                    <h3>Домик «Сосна» Premium</h3>
+                    <div class="price">12 000 ₽ / сутки</div>
+                    <ul class="features">
+                        <li>До 8 гостей</li>
+                        <li>3 спальни, камин</li>
+                        <li>Чан с подогревом на улице</li>
+                        <li>Сауна + купель</li>
+                        <li>Вид на озеро с террасы</li>
+                        <li>Детская площадка рядом</li>
+                    </ul>
+                    <a href="tel:+79991234567" class="btn" style="width:100%;margin-top:15px;">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- Домик 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800" alt="Домик Ель">
+                <div class="card-body">
+                    <h3>Домик «Ель» для двоих</h3>
+                    <div class="price">6 500 ₽ / сутки</div>
+                    <ul class="features">
+                        <li>Романтика для пары</li>
+                        <li>Большая кровать king-size</li>
+                        <li>Панорамные окна</li>
+                        <li>Джакузи на террасе</li>
+                        <li>Завтрак включён</li>
+                        <li>Без детей и животных</li>
+                    </ul>
+                    <a href="https://www.avito.ru/">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Что входит в стоимость</h2>
+        <div class="grid">
+            <div class="card" style="text-align:center;padding:40px;">
+                <h3 style="font-size:2rem;color:var(--green);">Всё включено!</h3>
+                <p style="margin:20px 0;font-size:1.2rem;">
+                    Постельное бельё и полотенца • Дрова для бани и мангала • Wi-Fi • Парковка • Лодки и сапы • Чай/кофе • Средства гигиены
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Фото с территории</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1587502536575-6e51f6f6c9d5?w=800" alt="Баня">
+            <img src="https://images.unsplash.com/photo-1600563438938-a9a27216ef73?w=800" alt="Озеро">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800" alt="Терраса">
+            <img src="https://images.unsplash.com/photo-1578895219984-77696b66d5a9?w=800" alt="Чан">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Домик внутри">
+            <img src="https://images.unsplash.com/photo-1513584684374-8babefae6d49?w=800" alt="Утро у озера">
+        </div>
+    </section>
+
+</div>
+
+<section class="contacts">
+    <div class="container">
+        <h2>Забронировать прямо сейчас</h2>
+        <p style="font-size:1.4rem;margin:20px 0;">Звоните или пишите в WhatsApp — ответим моментально!</p>
+        <div class="phone">+7 (777) 777-77-77</div>
+        <a href="https://wa.me/79991234567" class="btn" style="background:#25d366;">Написать в WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Лесные Домики — отдых с душой<br>
+    Московская область • 120 км от МКАД • Работаем круглый год</p>
+</footer>
+
+</body>
+</html>

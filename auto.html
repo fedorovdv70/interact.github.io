@@ -185,6 +185,23 @@
   background: linear-gradient(135deg, #FF6B00, #E65100);
   color: white;
 }
+    /* Номер телефона — всегда серый на мобильных */
+.phone-number {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text) !important;
+  margin: 1.5rem 0;
+  letter-spacing: -1px;
+  -webkit-text-fill-color: var(--text) !important; /* iOS Safari */
+  pointer-events: none; /* отключает распознавание как ссылки */
+}
+
+@media (max-width: 768px) {
+  .phone-number {
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -304,9 +321,9 @@
   <h2>Забронировать технику</h2>
   <div style="max-width: 600px; margin: 0 auto; text-align: center;">
     <p style="font-size: 1.4rem; margin-bottom: 1.5rem;">Звоните или пишите — ответим в течение 5 минут</p>
-    <div style="font-size: 2.8rem; font-weight: 700; color: var(--accent); margin: 1.5rem 0; letter-spacing: -1px;">
-      +7 (906) 954-64-94
-    </div>
+    <div class="phone-number">
+  +7 (906) 954-64-94
+</div>
     <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem;">
       WhatsApp / Telegram / MAX — круглосуточно
     </p>

@@ -1,257 +1,394 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лесные Домики</title>
-    <style>
-        :root {
-            --green: #2e7d32;
-            --beige: #f5e6d3;
-            --brown: #5d4037;
-            --light: #fff8e1;
-        }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f9f7f2;
-            color: #333;
-            line-height: 1.7;
-        }
-        header {
-            height: 100vh;
-            min-height: 600px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=1600') center/cover no-repeat;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        .hero {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.7);
-        }
-        .subtitle {
-            font-size: 1.6rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        .btn:hover { background: #1b5e20; transform: translateY(-5px); }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Le Bois Privé • Эксклюзивные домики в лесу</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --text: #f0f0f0;
+      --text-muted: #b0b0b0;
+      --accent: #c9a96e;       /* золотисто-янтарный */
+      --accent-dark: #a67c00;
+      --card-bg: #151515;
+      --border: #2a2a2a;
+    }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 80px 0; }
-        h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 50px;
-            color: var(--brown);
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: 0.4s;
-        }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .card img { width: 100%; height: 240px; object-fit: cover; }
-        .card-body {
-            padding: 25px;
-        }
-        .price {
-            font-size: 2rem;
-            color: var(--green);
-            font-weight: bold;
-            margin: 15px 0;
-        }
-        .features {
-            list-style: none;
-            margin: 20px 0;
-        }
-        .features li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .features li:before {
-            content: "✓ ";
-            color: var(--green);
-            font-weight: bold;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 40px;
-        }
-        .gallery img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            transition: 0.3s;
-        }
-        .gallery img:hover { transform: scale(1.05); }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
 
-        .contacts {
-            background: var(--brown);
-            color: white;
-            text-align: center;
-        }
-        .contacts h2 { color: #fff; }
-        .phone {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #ffca28;
-        }
-        footer {
-            background: #212121;
-            color: #aaa;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .subtitle { font-size: 1.3rem; }
-        }
-    </style>
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    header {
+      height: 100vh;
+      min-height: 700px;
+      background: linear-gradient(rgba(14,14,14,0.7), rgba(14,14,14,0.85)),
+                  url('https://images.unsplash.com/photo-1449452198679-5f0a2d2a6f3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+    }
+
+    h1 {
+      font-size: 5.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 0;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: 0.7s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #111;
+    }
+
+    /* Sections */
+    section {
+      padding: 160px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 2px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 3rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 0;
+      transition: all 0.4s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Pricing */
+    .price-card {
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+
+    .price-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 1.5rem 0;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-left: 4px solid var(--accent);
+      font-style: italic;
+    }
+
+    .author {
+      margin-top: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--accent);
+      text-align: right;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .faq-question {
+      font-size: 1.3rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      margin-top: 1.2rem;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    .faq-answer.show {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0a0a;
+      padding: 6rem 20px 4rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 3.8rem; }
+      h2 { font-size: 3rem; }
+      .btn { padding: 1rem 2.5rem; font-size: 1.1rem; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <div class="hero">
-        <h1>Лесные Домики</h1>
-        <p class="subtitle">Добро подаловать в аппартаменты подразделения УРиОУЭЦН. Уютные дома в окружении леса и озера<br>Идеальное место для отдыха с семьёй и друзьями</p>
-        <a href="tel:+79991234567" class="btn">Позвонить и забронировать</a>
+  <!-- Hero -->
+  <header>
+    <div class="hero-content">
+      <h1 class="accent">Le Bois Privé</h1>
+      <p class="subtitle">Эксклюзивные дизайнерские домики в частном лесном массиве</p>
+      <div>
+        <a href="#booking" class="btn btn-primary">Забронировать</a>
+        <a href="#about" class="btn btn-outline" style="margin-left:2rem;">Узнать больше</a>
+      </div>
     </div>
-</header>
+  </header>
 
-<div class="container">
-
-    <section id="houses">
-        <h2>Наши домики</h2>
-        <div class="grid">
-            <!-- Домик 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1576941089067-7dc7e74f80b2?w=800" alt="Домик Берёза">
-                <div class="card-body">
-                    <h3>Домик «Берёза»</h3>
-                    <div class="price">8 000 ₽ / сутки</div>
-                    <ul class="features">
-                        <li>До 6 гостей</li>
-                        <li>2 спальни + диван в гостиной</li>
-                        <li>Баня на дровах</li>
-                        <li>Мангал, казан, беседка</li>
-                        <li>Wi-Fi, Smart TV</li>
-                        <li>Лодка и сап-борд в подарок</li>
-                    </ul>
-                    <a href="tel:+7777-77-77" class="btn" style="width:100%;margin-top:15px;">Забронировать</a>
-                </div>
-            </div>
-
-            <!-- Домик 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Домик Сосна">
-                <div class="card-body">
-                    <h3>Домик «Сосна» Premium</h3>
-                    <div class="price">12 000 ₽ / сутки</div>
-                    <ul class="features">
-                        <li>До 8 гостей</li>
-                        <li>3 спальни, камин</li>
-                        <li>Чан с подогревом на улице</li>
-                        <li>Сауна + купель</li>
-                        <li>Вид на озеро с террасы</li>
-                        <li>Детская площадка рядом</li>
-                    </ul>
-                    <a href="tel:+79991234567" class="btn" style="width:100%;margin-top:15px;">Забронировать</a>
-                </div>
-            </div>
-
-            <!-- Домик 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800" alt="Домик Ель">
-                <div class="card-body">
-                    <h3>Домик «Ель» для двоих</h3>
-                    <div class="price">6 500 ₽ / сутки</div>
-                    <ul class="features">
-                        <li>Романтика для пары</li>
-                        <li>Большая кровать king-size</li>
-                        <li>Панорамные окна</li>
-                        <li>Джакузи на террасе</li>
-                        <li>Завтрак включён</li>
-                        <li>Без детей и животных</li>
-                    </ul>
-                    <a href="https://www.avito.ru/">Забронировать</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Что входит в стоимость</h2>
-        <div class="grid">
-            <div class="card" style="text-align:center;padding:40px;">
-                <h3 style="font-size:2rem;color:var(--green);">Всё включено!</h3>
-                <p style="margin:20px 0;font-size:1.2rem;">
-                    Постельное бельё и полотенца • Дрова для бани и мангала • Wi-Fi • Парковка • Лодки и сапы • Чай/кофе • Средства гигиены
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Фото с территории</h2>
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1587502536575-6e51f6f6c9d5?w=800" alt="Баня">
-            <img src="https://images.unsplash.com/photo-1600563438938-a9a27216ef73?w=800" alt="Озеро">
-            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800" alt="Терраса">
-            <img src="https://images.unsplash.com/photo-1578895219984-77696b66d5a9?w=800" alt="Чан">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Домик внутри">
-            <img src="https://images.unsplash.com/photo-1513584684374-8babefae6d49?w=800" alt="Утро у озера">
-        </div>
-    </section>
-
-</div>
-
-<section class="contacts">
-    <div class="container">
-        <h2>Забронировать прямо сейчас</h2>
-        <p style="font-size:1.4rem;margin:20px 0;">Звоните или пишите в WhatsApp — ответим моментально!</p>
-        <div class="phone">+7 (777) 777-77-77</div>
-        <a href="https://wa.me/79991234567" class="btn" style="background:#25d366;">Написать в WhatsApp</a>
+  <!-- Почему мы -->
+  <section id="about">
+    <h2>Почему Le Bois Privé</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Абсолютная приватность</h3>
+        <p>Каждый домик окружён лесом, расстояние между объектами — более 250 метров.</p>
+      </div>
+      <div class="card">
+        <h3>Безупречный комфорт</h3>
+        <p>Дизайнерский интерьер, натуральные материалы, сауна, камин, высокоскоростной интернет.</p>
+      </div>
+      <div class="card">
+        <h3>Персонализированный сервис</h3>
+        <p>Круглосуточная консьерж-служба, доставка продуктов, индивидуальные пожелания.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
-    <p>© 2025 Лесные Домики — отдых с душой<br>
-    Московская область • 120 км от МКАД • Работаем круглый год</p>
-</footer>
+  <!-- Преимущества -->
+  <section style="background: #111;">
+    <h2>Особенности домиков</h2>
+    <div class="grid">
+      <div class="card"><h3>Панорамное остекление</h3><p>Стеклянные стены от пола до потолка — лес становится частью интерьера.</p></div>
+      <div class="card"><h3>Финская сауна</h3><p>Собственная парная + купель на террасе.</p></div>
+      <div class="card"><h3>Просторные террасы</h3><p>От 30 до 50 м² с дизайнерской мебелью и зоной барбекю.</p></div>
+      <div class="card"><h3>Полная автономия</h3><p>Кухня премиум-класса, стиральная машина, камин, Wi-Fi.</p></div>
+    </div>
+  </section>
 
+  <!-- Цены -->
+  <section id="pricing">
+    <h2>Тарифы</h2>
+    <div class="grid">
+      <div class="price-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Классик">
+        <h3>Signature</h3>
+        <div class="price">22 000 ₽ / сутки</div>
+        <p>2–4 гостя • 2 спальни • сауна • терраса 30 м²</p>
+        <a href="#booking" class="btn btn-primary" style="margin-top:2rem; width:100%;">Выбрать даты</a>
+      </div>
+      <div class="price-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Премиум">
+        <h3>Reserve</h3>
+        <div class="price">34 000 ₽ / сутки</div>
+        <p>4–6 гостей • 3 спальни • джакузи • камин • терраса 45 м²</p>
+        <a href="#booking" class="btn btn-primary" style="margin-top:2rem; width:100%;">Выбрать даты</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section style="background: #111;">
+    <h2>Отзывы</h2>
+    <div class="grid">
+      <div class="testimonial">
+        <p>«Это место — настоящее убежище. Тишина, роскошь и внимание к деталям. Лучший отдых за последние годы.»</p>
+        <div class="author">— Екатерина и Алексей</div>
+      </div>
+      <div class="testimonial">
+        <p>«Домик — произведение искусства. Панорамные окна, сауна, сервис — всё на высшем уровне.»</p>
+        <div class="author">— Мария</div>
+      </div>
+      <div class="testimonial">
+        <p>«Идеальное сочетание природы и комфорта. Обязательно вернёмся.»</p>
+        <div class="author">— Владимир</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Вопросы и ответы</h2>
+    <div class="faq-item">
+      <div class="faq-question">Можно ли приезжать с детьми и животными? <span>↓</span></div>
+      <div class="faq-answer">Дети любого возраста — да. Животные — мелкие и средние породы по согласованию (+3 000 ₽/сутки).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Какой минимальный срок аренды? <span>↓</span></div>
+      <div class="faq-answer">2 суток. При бронировании от 5 суток — скидка 15%, от 10 суток — 20%.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Как происходит оплата? <span>↓</span></div>
+      <div class="faq-answer">50% предоплаты для фиксации дат, остаток — за 7 дней до заезда.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Что входит в стоимость? <span>↓</span></div>
+      <div class="faq-answer">Проживание, сауна, Wi-Fi, уборка, постельное бельё, полотенца, дрова, консьерж-сервис.</div>
+    </div>
+  </section>
+
+  <!-- Бронирование -->
+  <section id="booking" style="background: #0a0a0a;">
+    <h2>Забронировать домик</h2>
+    <form style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
+      <input type="text" placeholder="Имя" required style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
+      <input type="tel" placeholder="Телефон" required style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
+      <input type="email" placeholder="Email" style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <input type="date" required style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
+        <input type="date" required style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
+      </div>
+      <select style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);">
+        <option>Тип домика</option>
+        <option>Signature (2–4 чел)</option>
+        <option>Reserve (4–6 чел)</option>
+      </select>
+      <textarea placeholder="Дополнительные пожелания (питание, трансфер, особые требования)" rows="5" style="padding:1.4rem; border:1px solid var(--border); background:#1a1a1a; color:var(--text);"></textarea>
+      <button type="submit" class="btn btn-primary">Отправить заявку</button>
+    </form>
+    <p style="text-align:center; margin-top:2.5rem; color:var(--text-muted);">Менеджер свяжется с вами в течение 15 минут</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2 class="accent">Le Bois Privé</h2>
+    <p style="margin:2rem 0; color:var(--text-muted);">+7 (495) 777-88-99 • reservation@leboisprive.ru</p>
+    <p style="font-size:0.95rem; color:var(--text-muted);">
+      © 2025 Le Bois Privé. Эксклюзивный отдых в гармонии с природой.
+    </p>
+  </footer>
+
+  <!-- JS для FAQ -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.nextElementSibling.classList.toggle('show');
+      });
+    });
+  </script>
 </body>
 </html>

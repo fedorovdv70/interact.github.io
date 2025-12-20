@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DriveRent • Прокат авто и мототехники</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0f1217;
+      --text: #e8e8e8;
+      --text-muted: #a0a0a0;
+      --accent: #1e88e5;
+      --card-bg: #161b22;
+      --border: #2a2f38;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      height: 90vh;
+      min-height: 650px;
+      background: linear-gradient(rgba(15,18,23,0.85), rgba(15,18,23,0.95)),
+                  url('https://images.unsplash.com/photo-1502877338535-766e3a6052d2?w=1600') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    h1 {
+      font-size: 4.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      margin: 0 1rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    section {
+      padding: 120px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 3.2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      border-color: var(--accent);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.8rem;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 1rem 0;
+    }
+
+    footer {
+      background: #0a0d12;
+      padding: 5rem 20px 3rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 3.2rem; }
+      h2 { font-size: 2.8rem; }
+      .btn { padding: 0.9rem 2rem; font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <div class="hero-content">
+      <h1>DriveRent</h1>
+      <p class="subtitle">Прокат автомобилей, мотоциклов, квадроциклов и скутеров</p>
+      <div>
+        <a href="#fleet" class="btn btn-primary">Выбрать технику</a>
+        <a href="#contacts" class="btn btn-outline">Забронировать</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Флот техники -->
+  <section id="fleet">
+    <h2>Наш автопарк</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e3a6052d2?w=800" alt="Седан">
+        <div class="card-content">
+          <h3>Седан бизнес-класса</h3>
+          <div class="price">от 4 500 ₽ / сутки</div>
+          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?w=800" alt="Внедорожник">
+        <div class="card-content">
+          <h3>Внедорожник 4×4</h3>
+          <div class="price">от 7 000 ₽ / сутки</div>
+          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800" alt="Мотоцикл">
+        <div class="card-content">
+          <h3>Спортивный мотоцикл</h3>
+          <div class="price">от 5 000 ₽ / сутки</div>
+          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="Квадроцикл">
+        <div class="card-content">
+          <h3>Квадроцикл</h3>
+          <div class="price">от 6 500 ₽ / сутки</div>
+          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Условия -->
+  <section style="background: #0d0d0d;">
+    <h2>Условия проката</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>Без залога</h3>
+          <p>Не требуется оставлять деньги или документы</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Полный бак</h3>
+          <p>Техника выдаётся с полным баком</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Страховка КАСКО</h3>
+          <p>Полное покрытие без франшизы</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>24/7 поддержка</h3>
+          <p>Круглосуточная помощь по телефону</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts">
+    <h2>Забронировать технику</h2>
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 1.4rem; margin-bottom: 2rem;">Звоните или пишите — ответим в течение 5 минут</p>
+      <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent); margin: 1.5rem 0;">
+        +7 (999) 123-45-67
+      </div>
+      <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">
+        WhatsApp / Telegram — круглосуточно
+      </p>
+      <a href="https://wa.me/79991234567" class="btn btn-primary" style="font-size: 1.4rem;">Написать в WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2 style="color: var(--accent);">DriveRent</h2>
+    <p style="margin: 1rem 0; color: var(--text-muted);">Москва и МО • 24/7 • Без выходных</p>
+    <p style="font-size: 0.9rem; color: var(--text-muted);">
+      © 2025 DriveRent. Все права защищены.
+    </p>
+  </footer>
+</body>
+</html>

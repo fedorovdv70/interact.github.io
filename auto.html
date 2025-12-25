@@ -5,41 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
     <style>
-       body {
-    font-family: Arial, sans-serif;
-    color: #e0e0e0;
-    background: #000;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-    display: flex;                /* ← добавлено */
-    justify-content: center;      /* ← добавлено */
-    align-items: flex-start;      /* ← добавлено */
-}
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+            background: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* можно center, если хотите строго по центру экрана */
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .login-container {
+            background: rgba(30, 30, 30, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            padding: 40px 30px;
+            width: 360px;
+            max-width: 90vw;               /* ← главное исправление */
+            margin: 10vh auto 0;           /* 10vh сверху, auto — центрирование */
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 255, 0, 0.15);
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            background: rgba(45, 45, 45, 0.4);
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input::placeholder {
+            color: #aaa;
+        }
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+            background: rgba(45, 45, 45, 0.6);
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, #66BB6A, #43A047);
+        }
+        #error {
+            color: #ff6b6b;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.login-container {
-    background: rgba(30, 30, 30, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    padding: 40px 45px;
-    width: 360px;
-    max-width: 90%;               /* ← добавлено */
-    margin: 15vh auto 0;          /* ← изменено */
-    position: relative;
-    z-index: 1;
-    transition: all 0.4s ease;
-}
+        /* Дополнительная адаптация для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+                margin-top: 8vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,6 +125,7 @@ canvas {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
+
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
@@ -69,6 +133,7 @@ canvas {
         const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         const nums = '0123456789';
         const alphabet = katakana + latin + nums;
+
         const fontSize = 14;
         const columns = Math.floor(canvas.width / fontSize);
         const drops = Array(columns).fill(0);
@@ -80,6 +145,7 @@ canvas {
         function draw() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+
             ctx.font = `${fontSize}px monospace`;
 
             drops.forEach((y, i) => {
@@ -109,6 +175,7 @@ canvas {
             const password = document.getElementById('password').value;
 
             errorEl.textContent = '';
+
             if (!username || !password) {
                 errorEl.style.color = '#ff6b6b';
                 errorEl.textContent = 'Пожалуйста, заполните все поля';
@@ -116,11 +183,9 @@ canvas {
             }
 
             // Здесь может быть реальная проверка логина/пароля
-            // Для демо — просто перенаправляем на Яндекс
             errorEl.style.color = '#4CAF50';
             errorEl.textContent = 'Вход выполнен! Перенаправление...';
 
-            // Задержка 1 секунда для показа сообщения, потом редирект
             setTimeout(() => {
                 window.location.href = 'http://www.interact70.ru/auto1.html';
             }, 1000);

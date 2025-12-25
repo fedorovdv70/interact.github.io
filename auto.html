@@ -1,388 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DriveRent • Прокат авто и мототехники</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход в систему</title>
   <style>
-    :root {
-      --bg: #0f1217;
-      --text: #e8e8e8;
-      --text-muted: #a0a0a0;
-      --accent: #1e88e5;
-      --card-bg: #161b22;
-      --border: #2a2f38;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    header {
-      height: 90vh;
-      min-height: 650px;
-      background: linear-gradient(rgba(15,18,23,0.85), rgba(15,18,23,0.95)),
-                  url('https://images.unsplash.com/photo-1502877338535-766e3a6052d2?w=1600') center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero-content {
-      max-width: 900px;
-    }
-    h1 {
-      font-size: 4.2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -1px;
-    }
-    .subtitle {
-      font-size: 1.5rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem; /* Вернул комфортное расстояние */
-    }
-    .btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      margin: 0 1rem;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-    .btn-primary:hover {
-      background: #1565c0;
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: var(--accent);
-      color: white;
-    }
-    section {
-      padding: 80px 20px; /* Вернул нормальный отступ сверху */
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-size: 3.2rem;
-      text-align: center;
-      margin-bottom: 2rem; /* Вернул комфортное расстояние под заголовком */
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      width: 100px;
-      height: 3px;
-      background: var(--accent);
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      border-color: var(--accent);
-    }
-    .card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 1.8rem;
-      text-align: center;
-    }
-    .price {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 1rem 0;
-    }
-    footer {
-      background: #0a0d12;
-      padding: 5rem 20px 3rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-    @media (max-width: 768px) {
-      h1 { font-size: 3.2rem; }
-      h2 { font-size: 2.8rem; }
-      .btn { padding: 0.9rem 2rem; font-size: 1.1rem; }
-    }
-    .contact-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.btn-contact {
- display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.2rem 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  width: 100%; /* Полная ширина на мобильных */
-  max-width: 320px; /* Ограничение ширины на десктопе */
-  min-height: 60px; /* Одинаковая высота */
-  text-align: center;
-}
-
-.btn-contact:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
-.whatsapp {
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  color: white;
-}
-
-.telegram {
-  background: linear-gradient(135deg, #0088cc, #006699);
-  color: white;
-}
-
-.max {
-  background: linear-gradient(135deg, #FF6B00, #E65100);
-  color: white;
-}
-    /* Номер телефона — всегда серый на мобильных */
-.phone-number {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--text) !important;
-  margin: 1.5rem 0;
-  letter-spacing: -1px;
-  -webkit-text-fill-color: var(--text) !important; /* iOS Safari */
-  pointer-events: none; /* отключает распознавание как ссылки */
-}
-
-@media (max-width: 768px) {
-  .btn-contact {
-    width: 100%;
-    max-width: none;
-    min-height: 60px;
-    font-size: 1rem;
-  }
-}
-    .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem; /* Расстояние между кнопками */
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-  .hero-buttons {
-    flex-direction: column; /* Кнопки в столбик на мобильных */
-    gap: 1rem; /* Вертикальное расстояние между кнопками */
-  }
-}
+    body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .login-container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 350px; }
+    h2 { text-align: center; color: #333; }
+    input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+    button { width: 100%; padding: 12px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #45a049; }
+    #error { color: red; text-align: center; margin-top: 10px; }
   </style>
 </head>
 <body>
-  <!-- Hero -->
-  <header>
-    <div class="hero-content">
-      <h1>DriveRent</h1>
-      <p class="subtitle">Прокат автомобилей, мотоциклов, квадроциклов, багги</p>
-      <div class="hero-buttons">
-  <a href="#fleet" class="btn btn-primary">Выбрать технику</a>
-  <a href="#contacts" class="btn btn-outline">Забронировать</a>
-</div>
-    </div>
-  </header>
-
-  <!-- Флот техники -->
-  <section id="fleet">
-    <h2>Наш автопарк</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://dreamcars.by/upload/iblock/93e/93e441024b3814a5c091fa739a171518.jpg"alt="Седан">
-        <div class="card-content">
-          <h3>Седан бизнес-класса</h3>
-          <div class="price">от 4 500 ₽ / сутки</div>
-          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://media.istockphoto.com/id/1217846163/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D0%BD%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B6%D0%BD%D0%B8%D0%BA-%D0%BD%D0%B0-%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%BE%D0%B9-%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%B5.jpg?s=612x612&w=0&k=20&c=DalejtDmiG1opF6Gh-SLoneUajVBpz_nD1Ec4Ye948g=" alt="Внедорожник">
-        <div class="card-content">
-          <h3>Внедорожник 4×4</h3>
-          <div class="price">от 7 000 ₽ / сутки</div>
-          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://synergosmoto.com/uploaded/ODUHs7476k.jpg" alt="Мотоцикл">
-        <div class="card-content">
-          <h3>Спортивный мотоцикл</h3>
-          <div class="price">от 5 000 ₽ / сутки</div>
-          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://atvarmor.ru/wp-content/uploads/2015/02/171278278.jpg" alt="Квадроцикл">
-        <div class="card-content">
-          <h3>Квадроцикл</h3>
-          <div class="price">от 6 500 ₽ / сутки</div>
-          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://манжерок.рф/uploads/resize/1200x1200/images/QIB0Lze5lz01XxkcymwWg3J89D5IasfGtVhSg3dt.jpg" alt="Багги">
-        <div class="card-content">
-          <h3>Багги</h3>
-          <div class="price">от 6 500 ₽ / сутки</div>
-          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://lh4.googleusercontent.com/proxy/rIADcIhbPiZ1dUYDD1pmgyZ1Qj0_Sohku0nBnpoqLe1rDPwd_MZBISdzcGMS0mXDRBmhHZ4te2a46zgZLAfiSPvXwMdKkfePFNudMniJIq4-fGoDz4I" alt="Спорт-купе">
-        <div class="card-content">
-          <h3>Спорт-купе</h3>
-          <div class="price">от 6 500 ₽ / сутки</div>
-          <a href="#contacts" class="btn btn-primary" style="width:100%; margin-top:1rem;">Забронировать</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Условия -->
-  <section style="background: #0d0d0d;">
-    <h2>Условия проката</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card-content">
-          <h3>Без залога</h3>
-          <p>Не требуется оставлять деньги или документы</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>Полный бак</h3>
-          <p>Техника выдаётся с полным баком</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>Страховка КАСКО</h3>
-          <p>Полное покрытие без франшизы</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>24/7 поддержка</h3>
-          <p>Круглосуточная помощь по телефону</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>Состояние техники</h3>
-          <p>В отличном состоянии — технически исправны, 
-            с минимальным пробегом </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>Бонусные баллы</h3>
-          <p>Копите баллы и получайте скидку на аренду,
-а также дополнительные привелегии</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacts" style="background: #0d0d0d; padding: 80px 20px;">
-  <h2>Забронировать технику</h2>
-  <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-    <p style="font-size: 1.4rem; margin-bottom: 1.5rem;">Звоните или пишите — ответим в течение 5 минут</p>
-    <div class="phone-number">
-  +7 (906) 954-64-94
-</div>
-    <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem;">
-      WhatsApp / Telegram / MAX — круглосуточно
-    </p>
-
-    <!-- Кнопки -->
-    <div class="contact-buttons" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-      <!-- WhatsApp -->
-      <a href="https://wa.me/79069546494" class="btn-contact whatsapp">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.521.149-.174.198-.298.298-.497.099-.198-.05-.371-.149-.521-.099-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.003c-1.374 0-2.72-.37-3.892-.999l-.279-.166-2.905.76.773-2.822-.182-.325c-.65-1.164-1.001-2.508-1.001-3.909 0-4.07 3.316-7.386 7.386-7.386 4.07 0 7.386 3.316 7.386 7.386 0 4.07-3.316 7.386-7.386 7.386z"/>
-        </svg>
-        Написать в WhatsApp
-      </a>
-
-      <!-- Telegram -->
-      <a href="https://t.me/+79069546494" class="btn-contact telegram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
-          <path d="M11.944 0A11.944 11.944 0 0 0 0 11.944a11.944 11.944 0 0 0 11.944 11.944 11.944 11.944 0 0 0 11.944-11.944A11.944 11.944 0 0 0 11.944 0zm5.013 8.146l-3.184 1.5-1.5 3.184a.5.5 0 0 1-.708.207l-3.184-1.5a.5.5 0 0 1-.207-.708l1.5-3.184a.5.5 0 0 1 .708-.207l3.184 1.5a.5.5 0 0 1 .207.708z"/>
-        </svg>
-        Написать в Telegram
-      </a>
-
-      <!-- MAX -->
-      <a href="https://max.ru/u/f9LHodD0cOKRXsBPHukzl31ITk-KKWViazwaIMF6RFKLEaXP0LsS5AKLBHE" class="btn-contact max">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm1-15h-2v2H9v2h2v2h2v-2h2v-2h-2V7z"/>
-        </svg>
-        Написать в MAX
-      </a>
-    </div>
+  <div class="login-container">
+    <h2>Вход в систему</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Логин" required>
+      <input type="password" id="password" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+    </form>
+    <p id="error"></p>
   </div>
-</section>
 
-  <!-- Footer -->
-  <footer>
-    <h2 style="color: var(--accent);">DriveRent</h2>
-    <p style="margin: 1rem 0; color: var(--text-muted);">Ставрополь • 24/7 • Без выходных</p>
-    <p style="font-size: 0.9rem; color: var(--text-muted);">
-      © 2025 DriveRent. Все права защищены.
-    </p>
-  </footer>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('error');
+
+    // Жёстко закодированные логин/пароль (для обучения)
+    const users = {
+      admin: '123456',
+      user: 'qwerty'
+    };
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (users[username] && users[username] === password) {
+        // Успешный вход — перенаправляем на секретную страницу
+        window.location.href = 'auto1.html';
+      } else {
+        errorMsg.textContent = 'Неверный логин или пароль!';
+      }
+    });
+  </script>
 </body>
 </html>

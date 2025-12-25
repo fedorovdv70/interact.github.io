@@ -5,13 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Вход в систему</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-    .login-container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 350px; }
-    h2 { text-align: center; color: #333; }
-    input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-    button { width: 100%; padding: 12px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-    button:hover { background: #45a049; }
-    #error { color: red; text-align: center; margin-top: 10px; }
+    body {
+            font-family: Arial, sans-serif;
+            background: #121212;                    /* Тёмный фон страницы */
+            color: #e0e0e0;                         /* Светлый текст */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: #1e1e1e;                    /* Тёмная карточка */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6); /* Более выраженная тень */
+            width: 350px;
+            border: 1px solid #333;                 /* Лёгкая обводка для контраста */
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;                         /* Белый заголовок */
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #444;                 /* Тёмная граница */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background: #2d2d2d;                    /* Тёмное поле ввода */
+            color: #ffffff;                         /* Белый текст в поле */
+        }
+        input::placeholder {
+            color: #888;                            /* Серый плейсхолдер */
+        }
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;                  /* Зелёная обводка при фокусе */
+            box-shadow: 0 0 0 2px rgba(76,175,80,0.3);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #error {
+            color: #ff6b6b;                         /* Красный для ошибок */
+            text-align: center;
+            margin-top: 10px;
+        }
   </style>
 </head>
 <body>
